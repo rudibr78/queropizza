@@ -1,5 +1,5 @@
 CP = {online: true};
-CP.APP_NAME = 'iloc_client';
+CP.APP_NAME = 'queropizza';
 CP.VERSION = '0.0.1';
 CP.jsv = Math.ceil(Math.random() * 999999999999999) + 1;
 
@@ -9,11 +9,11 @@ CP.jsv = Math.ceil(Math.random() * 999999999999999) + 1;
 if (document.cookie.toString().indexOf('RDD=RDD') === -1) {
     CP.URL_API = 'http://200.155.13.171:8080/m_apps/'+CP.APP_NAME+'w/';
     CP.URL_APP = 'http://200.155.13.171:8080/m_apps/'+CP.APP_NAME+'w/';
-    CP.URL_PUB = 'http://200.155.13.171:8080/m_apps/public/iloc/';
+    CP.URL_PUB = 'http://200.155.13.171:8080/m_apps/public/'+CP.APP_NAME+'/';
 } else {
     CP.URL_APP = 'http://127.0.0.1/m_apps/'+CP.APP_NAME+'w/';
     CP.URL_API = 'http://127.0.0.1/m_apps/'+CP.APP_NAME+'w/';
-    CP.URL_PUB = 'http://127.0.0.1/m_apps/public/iloc/';
+    CP.URL_PUB = 'http://127.0.0.1/m_apps/public/'+CP.APP_NAME+'/';
 }
 
 MSG_SEM_NET = "Sua conexão com a internet parece estar desligada. Por favor verifique sua conexão e tente de novo.";
