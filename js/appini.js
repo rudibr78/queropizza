@@ -61,7 +61,8 @@ function app_connected() {
 }
 
 function loadJsCss(src) {
-    var ext = src.substring(src.length - 4) == '.css' ? 'css' : 'js';
+    var spl = src.split('?')[0];
+    var ext = spl.substring(spl.length - 4) == '.css' ? 'css' : 'js';
     if (ext == "js") { //if filename is a external JavaScript file
         var fileref = document.createElement('script')
         fileref.setAttribute("type", "text/javascript")
