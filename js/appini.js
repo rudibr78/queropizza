@@ -2,18 +2,24 @@ CP = {online: true};
 CP.APP_NAME = 'queropizza';
 CP.VERSION = '0.0.1';
 CP.jsv = Math.ceil(Math.random() * 999999999999999) + 1;
+
 //cookie para debug :
 //document.cookie="RDD=RDD; expires=Thu, 18 Dec 2053 12:00:00 UTC";
-if (document.cookie.toString().indexOf('RDD=RDD') === -1) {
-    CP.URL_API = 'http://200.155.13.171:8080/m_apps/' + CP.APP_NAME + 'w/';
-    CP.URL_APP = 'http://200.155.13.171:8080/m_apps/' + CP.APP_NAME + 'w/';
-    CP.URL_PUB = 'http://200.155.13.171:8080/m_apps/public/' + CP.APP_NAME + '/';
-} else {
+function isDev() {
+    return document.cookie.toString().indexOf('RDD=RDD') > -1;
+}
+
+if (isDev()) {
     CP.URL_APP = 'http://127.0.0.1/m_apps/' + CP.APP_NAME + 'w/';
     CP.URL_API = 'http://127.0.0.1/m_apps/' + CP.APP_NAME + 'w/';
     CP.URL_PUB = 'http://127.0.0.1/m_apps/public/' + CP.APP_NAME + '/';
+} else {
+    CP.URL_API = 'http://200.155.13.171:8080/m_apps/' + CP.APP_NAME + 'w/';
+    CP.URL_APP = 'http://200.155.13.171:8080/m_apps/' + CP.APP_NAME + 'w/';
+    CP.URL_PUB = 'http://200.155.13.171:8080/m_apps/public/' + CP.APP_NAME + '/';
 }
 MSG_SEM_NET = "Sua conexão com a internet parece estar desligada. Por favor verifique sua conexão e tente de novo.";
+
 
 function loadIniScript() {
     loadJsCss(CP.URL_APP + 'js/app.js?v=' + CP.jsv);
@@ -63,6 +69,7 @@ function app_connected() {
 function loadJsCss(src) {
     var spl = src.split('?')[0];
     var ext = spl.substring(spl.length - 4) == '.css' ? 'css' : 'js';
+    src += (src.indexOf('?') === -1 ? '?' : '&') + 'v=' + gen_uuid();
     if (ext == "js") { //if filename is a external JavaScript file
         var fileref = document.createElement('script')
         fileref.setAttribute("type", "text/javascript")
@@ -398,7 +405,7 @@ function formatNumber(n, dec_sep, round, precision)
                 n[1] += '0';
         }
     }
-    
+
     return n[0] + (n.length > 1 && n[1] != '' ? dec_sep + n[1] : '');
 }
 
