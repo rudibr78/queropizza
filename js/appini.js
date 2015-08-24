@@ -10,13 +10,13 @@ function isDev() {
 }
 
 if (isDev()) {
-    CP.URL_APP = 'http://127.0.0.1/m_apps/' + CP.APP_NAME + 'w/';
-    CP.URL_API = 'http://127.0.0.1/m_apps/' + CP.APP_NAME + 'w/';
-    CP.URL_PUB = 'http://127.0.0.1/m_apps/public/' + CP.APP_NAME + '/';
+    CP.URL_APP = 'http://192.168.0.111/m_apps/' + CP.APP_NAME + 'w/';
+    CP.URL_API = 'http://192.168.0.111/m_apps/' + CP.APP_NAME + 'w/';
+    CP.URL_PUB = 'http://192.168.0.111/m_apps/public/' + CP.APP_NAME + '/';
 } else {
-    CP.URL_API = 'http://200.155.13.171:8080/m_apps/' + CP.APP_NAME + 'w/';
-    CP.URL_APP = 'http://200.155.13.171:8080/m_apps/' + CP.APP_NAME + 'w/';
-    CP.URL_PUB = 'http://200.155.13.171:8080/m_apps/public/' + CP.APP_NAME + '/';
+    CP.URL_API = 'http://200.155.13.171/m_apps/' + CP.APP_NAME + 'w/';
+    CP.URL_APP = 'http://200.155.13.171/m_apps/' + CP.APP_NAME + 'w/';
+    CP.URL_PUB = 'http://200.155.13.171/m_apps/public/' + CP.APP_NAME + '/';
 }
 MSG_SEM_NET = "Sua conexão com a internet parece estar desligada. Por favor verifique sua conexão e tente de novo.";
 
