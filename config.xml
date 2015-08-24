@@ -19,6 +19,11 @@
     </author>
     <access origin="*"/>
     
+    <gap:plugin name="com.phonegap.plugins.facebookconnect" version="0.9.0">
+        <param name="APP_ID" value="1023654354365567" />
+        <param name="APP_NAME" value="queropizza_prod" />
+    </gap:plugin>
+    
     <gap:plugin name="org.li8.inappbrowser" version="0.1" />
     <gap:plugin name="nl.x-services.plugins.socialsharing" version="4.3.8" />
     <gap:plugin name="org.apache.cordova.network-information" version="0.2.3" />
