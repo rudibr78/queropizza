@@ -3,43 +3,20 @@ CP.APP_NAME = 'queropizza';
 CP.VERSION = '0.0.1';
 CP.jsv = Math.ceil(Math.random() * 999999999999999) + 1;
 
-function _GET(variable) {
-    var query = window.location.search.substring(1);
-    var vars = query.split("&");
-    for (var i = 0; i < vars.length; i++) {
-        var pair = vars[i].split("=");
-        if (pair[0] == variable) {
-            return pair[1];
-        }
-    }
-    return false;
+if (window.location.href.indexOf('desktop=on') !== -1) {
+    localStorage.setItem('destktop_version', 1);
+} else if (window.location.href.indexOf('desktop=off') !== -1) {
+    localStorage.removeItem('destktop_version');
 }
 
-if (_GET('desktop') == 'on') {
-    forcedestktopoff = false;
-    document.cookie = "appdesktopver=1; expires=Thu, 18 Dec 2053 12:00:00 UTC";
-} else if (_GET('desktop') == 'off') {
-    forcedestktopoff = true;
-    document.cookie = "appdesktopver=1; expires=Thu, 18 Dec 2000 12:00:00 UTC";
-}
-//cookie para debug :
-//document.cookie="RDD=RDD; expires=Thu, 18 Dec 2053 12:00:00 UTC";
-function isDev() {
-    return document.cookie.toString().indexOf('RDD=RDD') > -1;
-}
-
-function is_mobile() {
-    return forcedestktopoff || document.cookie.toString().indexOf('appdesktopver=1') === -1;
-}
- 
-if (is_mobile()) {
+if (localStorage.getItem('destktop_version') != 1) {
     CP.URL_APP = 'http://m.multidadosti.com.br/m_apps/' + CP.APP_NAME + 'w/';
 } else {
     CP.URL_APP = 'http://' + window.location.host + '/m_apps/' + CP.APP_NAME + 'w/';
 }
-
+ 
 MSG_SEM_NET = "Sua conexão com a internet parece estar desligada. Por favor verifique sua conexão e tente de novo.";
-
+ 
 function loadIniScript() {
     var src = CP.URL_APP + 'js/app.js';
     src += '?v=' + CP.jsv;
