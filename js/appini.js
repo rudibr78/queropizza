@@ -31,7 +31,7 @@ function isDev() {
 function is_mobile() {
     return forcedestktopoff || document.cookie.toString().indexOf('appdesktopver=1') === -1;
 }
-
+ 
 if (is_mobile()) {
     CP.URL_APP = 'http://m.multidadosti.com.br/m_apps/' + CP.APP_NAME + 'w/';
 } else {
