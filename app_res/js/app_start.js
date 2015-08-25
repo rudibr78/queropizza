@@ -3,12 +3,6 @@ CP.APP_NAME = 'queropizza';
 CP.VERSION = '0.0.1';
 CP.jsv = Math.ceil(Math.random() * 999999999999999) + 1;
 
-if (window.location.href.indexOf('desktop=on') !== -1) {
-    localStorage.setItem('destktop_version', 1);
-} else if (window.location.href.indexOf('desktop=off') !== -1) {
-    localStorage.removeItem('destktop_version');
-}
-
 if (localStorage.getItem('destktop_version') != 1) {
     CP.URL_APP = 'http://m.multidadosti.com.br/m_apps/' + CP.APP_NAME + 'w/';
 } else {

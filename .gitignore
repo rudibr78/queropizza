@@ -1,4 +1,9 @@
 *.log
+_gsdata_/*.*
 _gsdata_/_cleanup.gss
 *._gs
 _gsdata_/_insync_v4.gsl
+cordova.js
+cordova_plugins.js
+plugins/*.*
+phonegap.js
