@@ -18,40 +18,11 @@
         Multidados TI
     </author>
     <access origin="*"/>
-    
-    <feature name='NetworkStatus'>
-        <param name='ios-package' value='CDVConnection'/>
-    </feature>
-    <feature name='LocalStorage'>
-        <param value='CDVLocalStorage' name='ios-package'/>
-    </feature>
-    <!-- splashscreen -->
-    <!-- <gap:plugin name="org.apache.cordova.splashscreen" version="0.3.4" /> -->
-    <gap:plugin name="org.apache.cordova.splashscreen" />
-    <!-- Do not auto hide splash on iOS -->
-    <preference name="AutoHideSplashScreen" value="false" />
-    <!-- 
-    <preference name="FadeSplashScreen" value="true"/>
-    <preference name="FadeSplashScreenDuration" value=".25"/>
-    <preference name="ShowSplashScreenSpinner" value="true"/>
-    <feature name='SplashScreen'><param name='ios-package' value='CDVSplashScreen'/></feature>
-    -->
-    <!-- Do not auto hide splash on Android -->
-    <preference name="SplashScreenDelay" value="10000"/>
-    <!-- /splashscreen -->
-    
-    <gap:plugin name="com.phonegap.plugins.facebookconnect" version="0.9.0">
-        <param name="APP_ID" value="1023654354365567" />
-        <param name="APP_NAME" value="queropizza_prod" />
-    </gap:plugin>
-    
+        
     <gap:plugin name="org.li8.inappbrowser" version="0.1" />
-    <gap:plugin name="nl.x-services.plugins.socialsharing" version="4.3.8" />
     <gap:plugin name="org.apache.cordova.network-information" version="0.2.3" />
     <gap:plugin name="org.apache.cordova.camera" version="0.3.2" />
     
-    <gap:plugin name="nl.x-services.plugins.toast" version="2.0.2" />
-    <gap:plugin name="com.adobe.plugins.gaplugin" version="2.4.0" />
     <gap:plugin name="com.phonegap.plugins.pushplugin" version="2.4.0" />    
     <gap:plugin name="org.apache.cordova.media-capture" version="0.3.3" />
     <gap:plugin name="org.apache.cordova.file" version="1.3.1" />
@@ -59,7 +30,7 @@
     <gap:plugin name="org.apache.cordova.geolocation" version="0.3.10" />
     <gap:plugin name="org.apache.cordova.dialogs" version="0.2.10" />
     <gap:plugin name="org.apache.cordova.vibration" version="0.3.11" />
-    
+    <gap:plugin name="org.apache.cordova.splashscreen" version="0.3.4" />
     <gap:plugin name="org.apache.cordova.device-orientation" version="0.3.9" />
     <gap:plugin name="org.apache.cordova.device-motion" version="0.2.10" />
     <gap:plugin name="org.apache.cordova.device" version="0.2.12" />
@@ -104,6 +75,9 @@
     <feature name='File'>
         <param name='ios-package' value='CDVFile'/>
     </feature>
+    <feature name='NetworkStatus'>
+        <param name='ios-package' value='CDVConnection'/>
+    </feature>
     <feature name='FileTransfer'>
         <param name='ios-package' value='CDVFileTransfer'/>
     </feature>
@@ -112,6 +86,9 @@
     </feature>
     <feature name='Battery'>
         <param name='ios-package' value='CDVBattery'/>
+    </feature>
+    <feature name='SplashScreen'>
+        <param name='ios-package' value='CDVSplashScreen'/>
     </feature>
     <feature name='Echo'>
         <param name='ios-package' value='CDVEcho'/>
@@ -125,7 +102,16 @@
     <feature name='Logger'>
         <param name='ios-package' value='CDVLogger'/>
     </feature>
+    <feature name='LocalStorage'>
+        <param value='CDVLocalStorage' name='ios-package'/>
+    </feature>
     
+    <preference value='false' name='AutoHideSplashScreen'/>
+    <!--
+    <preference value='true' name='FadeSplashScreen'/>
+    <preference value='.25' name='FadeSplashScreenDuration'/>
+    <preference value='true' name='ShowSplashScreenSpinner'/>
+    -->
     <preference value='true' name='AllowInlineMediaPlayback'/>
     <preference value='false' name='MediaPlaybackRequiresUserAction'/>
     <preference value='true' name='OpenAllWhitelistURLsInWebView'/>
@@ -219,7 +205,7 @@
     <gap:splash src="app_res/images/splashes/ios/splash_1536x2048.png" gap:platform="ios" width="1536" height="2048" />
     <gap:splash src="app_res/images/splashes/ios/splash_2048x1536.png" gap:platform="ios" width="2048" height="1536" />
 	
-    <!-- Android splashes --> 
+    <!-- Android splashes -->
     <!-- 200x320 -->
     <gap:splash src="app_res/images/splashes/android/splash_200x320.png" gap:platform="android" gap:qualifier="port-ldpi" />
     <!-- 320x480 -->
@@ -247,4 +233,5 @@
 	
     <!-- Windows Phone splashes -->
     <gap:splash src="app_res/images/splashes/wp/splash.jpg" gap:platform="winphone" />
+
 </widget>
