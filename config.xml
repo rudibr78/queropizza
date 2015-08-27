@@ -59,7 +59,7 @@
     <gap:plugin name="org.apache.cordova.device" version="0.2.12" />
     <gap:plugin name="org.apache.cordova.contacts" version="0.2.13" />
     <gap:plugin name="org.apache.cordova.console" version="0.2.11" />
-    
+<?ignore    
     <!-- <feature name="http://api.phonegap.com/1.0/battery"/> -->
     <feature name="http://api.phonegap.com/1.0/camera"/>
     <!-- <feature name="http://api.phonegap.com/1.0/contacts"/> -->
@@ -247,5 +247,5 @@
 	
     <!-- Windows Phone splashes -->
     <gap:splash src="app_res/images/splashes/wp/splash.jpg" gap:platform="winphone" />
-
+?>
 </widget>
