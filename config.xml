@@ -19,6 +19,12 @@
     </author>
     <access origin="*"/>
     
+    <feature name='NetworkStatus'>
+        <param name='ios-package' value='CDVConnection'/>
+    </feature>
+    <feature name='LocalStorage'>
+        <param value='CDVLocalStorage' name='ios-package'/>
+    </feature>
     <!-- splashscreen -->
     <!-- <gap:plugin name="org.apache.cordova.splashscreen" version="0.3.4" /> -->
     <gap:plugin name="org.apache.cordova.splashscreen" />
@@ -59,6 +65,7 @@
     <gap:plugin name="org.apache.cordova.device" version="0.2.12" />
     <gap:plugin name="org.apache.cordova.contacts" version="0.2.13" />
     <gap:plugin name="org.apache.cordova.console" version="0.2.11" />
+    
 <?ignore    
     <!-- <feature name="http://api.phonegap.com/1.0/battery"/> -->
     <feature name="http://api.phonegap.com/1.0/camera"/>
@@ -98,9 +105,6 @@
     <feature name='File'>
         <param name='ios-package' value='CDVFile'/>
     </feature>
-    <feature name='NetworkStatus'>
-        <param name='ios-package' value='CDVConnection'/>
-    </feature>
     <feature name='FileTransfer'>
         <param name='ios-package' value='CDVFileTransfer'/>
     </feature>
@@ -121,9 +125,6 @@
     </feature>
     <feature name='Logger'>
         <param name='ios-package' value='CDVLogger'/>
-    </feature>
-    <feature name='LocalStorage'>
-        <param value='CDVLocalStorage' name='ios-package'/>
     </feature>
     
     <preference value='true' name='AllowInlineMediaPlayback'/>
