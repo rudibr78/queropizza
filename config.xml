@@ -38,6 +38,31 @@
     <gap:plugin name="org.apache.cordova.geolocation" version="0.3.10" />
     <gap:plugin name="org.apache.cordova.contacts" version="0.2.13" />
     <gap:plugin name="org.apache.cordova.console" version="0.2.11" />
+    
+    <feature name='Device'>        
+        <param name='ios-package' value='CDVDevice'/>    
+    </feature>
+    <feature name='Accelerometer'>        
+        <param name='ios-package' value='CDVAccelerometer'/>    
+    </feature>
+    <feature name='Compass'>        
+        <param name='ios-package' value='CDVLocation'/>    
+    </feature>
+    <feature name='Media'>        
+        <param name='ios-package' value='CDVSound'/>    
+    </feature>
+    <feature name='Camera'>        
+        <param name='ios-package' value='CDVCamera'/>    
+    </feature>
+    <feature name='Contacts'>        
+        <param name='ios-package' value='CDVContacts'/>    
+    </feature>
+    <feature name='File'>        
+        <param name='ios-package' value='CDVFile'/>    
+    </feature>
+    <feature name='NetworkStatus'>        
+        <param name='ios-package' value='CDVConnection'/>    
+    </feature>
     _________________________ 
     -->
     <gap:plugin name="org.apache.cordova.splashscreen" version="0.3.4" />
@@ -73,30 +98,6 @@
     </feature>
     <feature name='Geolocation'>
         <param name='ios-package' value='CDVLocation'/>    
-    </feature>
-    <feature name='Device'>        
-        <param name='ios-package' value='CDVDevice'/>    
-    </feature>
-    <feature name='Accelerometer'>        
-        <param name='ios-package' value='CDVAccelerometer'/>    
-    </feature>
-    <feature name='Compass'>        
-        <param name='ios-package' value='CDVLocation'/>    
-    </feature>
-    <feature name='Media'>        
-        <param name='ios-package' value='CDVSound'/>    
-    </feature>
-    <feature name='Camera'>        
-        <param name='ios-package' value='CDVCamera'/>    
-    </feature>
-    <feature name='Contacts'>        
-        <param name='ios-package' value='CDVContacts'/>    
-    </feature>
-    <feature name='File'>        
-        <param name='ios-package' value='CDVFile'/>    
-    </feature>
-    <feature name='NetworkStatus'>        
-        <param name='ios-package' value='CDVConnection'/>    
     </feature>
     
     <preference value='false' name='AutoHideSplashScreen'/>
