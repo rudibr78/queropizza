@@ -40,33 +40,7 @@
     <feature name="http://api.phonegap.com/1.0/notification"/>
     -->
     <!-- 
-    <feature name='Geolocation'>
-        <param name='ios-package' value='CDVLocation'/>    
-    </feature>
-    <feature name='Device'>        
-        <param name='ios-package' value='CDVDevice'/>    
-    </feature>
-    <feature name='Accelerometer'>        
-        <param name='ios-package' value='CDVAccelerometer'/>    
-    </feature>
-    <feature name='Compass'>        
-        <param name='ios-package' value='CDVLocation'/>    
-    </feature>
-    <feature name='Media'>        
-        <param name='ios-package' value='CDVSound'/>    
-    </feature>
-    <feature name='Camera'>        
-        <param name='ios-package' value='CDVCamera'/>    
-    </feature>
-    <feature name='Contacts'>        
-        <param name='ios-package' value='CDVContacts'/>    
-    </feature>
-    <feature name='File'>        
-        <param name='ios-package' value='CDVFile'/>    
-    </feature>
-    <feature name='NetworkStatus'>        
-        <param name='ios-package' value='CDVConnection'/>    
-    </feature>
+    
     <feature name='FileTransfer'>        
         <param name='ios-package' value='CDVFileTransfer'/>    
     </feature>
@@ -95,6 +69,39 @@
         <param value='CDVLocalStorage' name='ios-package'/>    
     </feature>
     -->
+    
+    <!-- _________________________ -->
+    
+    <feature name='Geolocation'>
+        <param name='ios-package' value='CDVLocation'/>    
+    </feature>
+    <feature name='Device'>        
+        <param name='ios-package' value='CDVDevice'/>    
+    </feature>
+    <feature name='Accelerometer'>        
+        <param name='ios-package' value='CDVAccelerometer'/>    
+    </feature>
+    <feature name='Compass'>        
+        <param name='ios-package' value='CDVLocation'/>    
+    </feature>
+    <feature name='Media'>        
+        <param name='ios-package' value='CDVSound'/>    
+    </feature>
+    <feature name='Camera'>        
+        <param name='ios-package' value='CDVCamera'/>    
+    </feature>
+    <feature name='Contacts'>        
+        <param name='ios-package' value='CDVContacts'/>    
+    </feature>
+    <feature name='File'>        
+        <param name='ios-package' value='CDVFile'/>    
+    </feature>
+    <feature name='NetworkStatus'>        
+        <param name='ios-package' value='CDVConnection'/>    
+    </feature>
+    
+    <!-- _________________________ -->
+    
     <preference value='true' name='AutoHideSplashScreen'/>
     <!--
     <preference value='true' name='FadeSplashScreen'/>
