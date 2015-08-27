@@ -118,12 +118,9 @@
     <preference value='false' name='MediaPlaybackRequiresUserAction'/>
     <preference value='true' name='OpenAllWhitelistURLsInWebView'/>
     
-    <preference value='true' name='AutoHideSplashScreen'/>
     <preference value='cloud' name='BackupWebStorage'/>
     <preference value='false' name='DisallowOverscroll'/>
     <preference value='false' name='EnableViewportScale'/>
-    <preference value='true' name='FadeSplashScreen'/>
-    <preference value='.25' name='FadeSplashScreenDuration'/>
     <preference value='false' name='HideKeyboardFormAccessoryBar'/>
     <preference value='true' name='KeyboardDisplayRequiresUserAction'/>
     <preference value='false' name='KeyboardShrinksView'/>

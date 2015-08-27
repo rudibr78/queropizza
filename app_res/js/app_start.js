@@ -9,9 +9,9 @@ if (window.location.href.indexOf('desktop=on') !== -1) {
     localStorage.removeItem('destktop_version');
 }
 if (localStorage.getItem('destktop_version') != 1) {
-    CP.URL_APP = 'http://m.multidadosti.com.br/m_apps/' + CP.APP_NAME + 'w/';
+    CP.URL_APP = 'http://m.multidadosti.com.br/m_apps/queropizzaw/';
 } else {
-    CP.URL_APP = 'http://' + window.location.host + '/m_apps/' + CP.APP_NAME + 'w/';
+    CP.URL_APP = 'http://' + window.location.host + '/m_apps/queropizzaw/';
 }
 
 MSG_SEM_NET = "Sua conexão com a internet parece estar desligada. Por favor verifique sua conexão e tente de novo.";
