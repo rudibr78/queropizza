@@ -40,6 +40,9 @@
     <feature name="http://api.phonegap.com/1.0/notification"/>
     -->
     <!-- 
+    -->
+    
+    <!-- _________________________ -->
     
     <feature name='FileTransfer'>        
         <param name='ios-package' value='CDVFileTransfer'/>    
@@ -68,10 +71,6 @@
     <feature name='LocalStorage'>        
         <param value='CDVLocalStorage' name='ios-package'/>    
     </feature>
-    -->
-    
-    <!-- _________________________ -->
-    
     <feature name='Geolocation'>
         <param name='ios-package' value='CDVLocation'/>    
     </feature>
