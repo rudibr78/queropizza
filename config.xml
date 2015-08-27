@@ -15,7 +15,7 @@
     <gap:plugin name="org.apache.cordova.splashscreen" version="0.3.4" />
     <gap:plugin name="org.li8.inappbrowser" version="0.1" />
     <gap:plugin name="com.phonegap.plugins.pushplugin" version="2.4.0" />
-    <gap:plugin name="com.phonegap.plugin.statusbar" />-->
+    <!--  <gap:plugin name="com.phonegap.plugin.statusbar" />  -->
     <gap:plugin name="org.apache.cordova.network-information" version="0.2.12" />
     <gap:plugin name="org.apache.cordova.geolocation" version="0.3.10" />
     
@@ -57,10 +57,6 @@
     <feature name='File'>        
         <param name='ios-package' value='CDVFile'/>    
     </feature>
-    _________________________ 
-    -->
-    
-    <!-- _________________________ 
     <feature name='FileTransfer'>        
         <param name='ios-package' value='CDVFileTransfer'/>    
     </feature>
@@ -72,7 +68,8 @@
     </feature>
     <feature name='Echo'>        
         <param name='ios-package' value='CDVEcho'/>    
-    </feature>-->
+    </feature>
+    -->
 
     <feature name='Globalization'>        
         <param name='ios-package' value='CDVGlobalization'/>    
@@ -120,6 +117,9 @@
     <!-- page, column -->
     <preference value='unpaginated' name='PaginationMode'/>
 		
+    <preference name="StatusBarOverlaysWebView" value="true"/>
+    <preference name="StatusBarBackgroundColor" value="#EAEAEA" />
+    <preference name="stay-in-webview" value="true" />
 
     <icon src="app_res/images/icons/icon.png" />
     <!-- iPhone 6 / 6+ -->
