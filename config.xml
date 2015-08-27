@@ -12,15 +12,14 @@
     
     <access origin="*"/>
         
-    <!-- passed 
     <gap:plugin name="org.apache.cordova.splashscreen" version="0.3.4" />
     <gap:plugin name="org.li8.inappbrowser" version="0.1" />
     <gap:plugin name="com.phonegap.plugins.pushplugin" version="2.4.0" />
     <gap:plugin name="com.phonegap.plugin.statusbar" />-->
     <gap:plugin name="org.apache.cordova.network-information" version="0.2.12" />
-    <!-- /passed -->
+    <gap:plugin name="org.apache.cordova.geolocation" version="0.3.10" />
     
-    <!-- android funcionou sem :
+    <!-- nao tem pq habilitar :
     <gap:plugin name="org.apache.cordova.camera" version="0.3.2" />
     
     <gap:plugin name="org.apache.cordova.media-capture" version="0.3.3" />
@@ -28,15 +27,11 @@
     <gap:plugin name="org.apache.cordova.file-transfer" version="0.4.6" />
     <gap:plugin name="org.apache.cordova.dialogs" version="0.2.10" />
     <gap:plugin name="org.apache.cordova.vibration" version="0.3.11" />
-    -->
     
-    <!-- nao tem pq habilitar :
     <gap:plugin name="org.apache.cordova.device-orientation" version="0.3.9" />
     <gap:plugin name="org.apache.cordova.device-motion" version="0.2.10" />
     <gap:plugin name="org.apache.cordova.device" version="0.2.12" />
-    -->
-    
-    <!-- 
+
     <gap:plugin name="org.apache.cordova.geolocation" version="0.3.10" />
     <gap:plugin name="org.apache.cordova.contacts" version="0.2.13" />
     <gap:plugin name="org.apache.cordova.console" version="0.2.11" />
@@ -62,9 +57,6 @@
     <feature name='File'>        
         <param name='ios-package' value='CDVFile'/>    
     </feature>
-    <feature name='NetworkStatus'>        
-        <param name='ios-package' value='CDVConnection'/>    
-    </feature>
     _________________________ 
     -->
     
@@ -78,14 +70,18 @@
     <feature name='Battery'>        
         <param name='ios-package' value='CDVBattery'/>    
     </feature>
-    <feature name='SplashScreen'>        
-        <param name='ios-package' value='CDVSplashScreen'/>    
-    </feature>
     <feature name='Echo'>        
         <param name='ios-package' value='CDVEcho'/>    
-    </feature>
+    </feature>-->
+
     <feature name='Globalization'>        
         <param name='ios-package' value='CDVGlobalization'/>    
+    </feature>
+    <feature name='NetworkStatus'>        
+        <param name='ios-package' value='CDVConnection'/>    
+    </feature>
+    <feature name='SplashScreen'>        
+        <param name='ios-package' value='CDVSplashScreen'/>    
     </feature>
     <feature name='InAppBrowser'>        
         <param name='ios-package' value='CDVInAppBrowser'/>    
@@ -98,8 +94,7 @@
     </feature>
     <feature name='Geolocation'>
         <param name='ios-package' value='CDVLocation'/>    
-    </feature>-->
-
+    </feature>
     
     <preference value='false' name='AutoHideSplashScreen'/>
     <!--
@@ -125,9 +120,9 @@
     <!-- page, column -->
     <preference value='unpaginated' name='PaginationMode'/>
 		
-    <preference name="StatusBarOverlaysWebView" value="true"/>
+    <preference name="StatusBarOverlaysWebView" value="false"/>
     <preference name="StatusBarBackgroundColor" value="#EAEAEA" />
-    <preference name="stay-in-webview" value="true" />
+    <preference name="stay-in-webview" value="false" />
 
     <icon src="app_res/images/icons/icon.png" />
     <!-- iPhone 6 / 6+ -->
