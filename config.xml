@@ -15,7 +15,8 @@
     <!-- passed 
     <gap:plugin name="org.apache.cordova.splashscreen" version="0.3.4" />
     <gap:plugin name="org.li8.inappbrowser" version="0.1" />
-    <gap:plugin name="com.phonegap.plugins.pushplugin" version="2.4.0" />-->
+    <gap:plugin name="com.phonegap.plugins.pushplugin" version="2.4.0" />
+    <gap:plugin name="com.phonegap.plugin.statusbar" />-->
     <gap:plugin name="org.apache.cordova.network-information" version="0.2.12" />
     <!-- /passed -->
     
@@ -123,9 +124,7 @@
     <preference value='page' name='PaginationBreakingMode'/>
     <!-- page, column -->
     <preference value='unpaginated' name='PaginationMode'/>
-	
-    <gap:plugin name="com.phonegap.plugin.statusbar" />
-	
+		
     <preference name="StatusBarOverlaysWebView" value="true"/>
     <preference name="StatusBarBackgroundColor" value="#EAEAEA" />
     <preference name="stay-in-webview" value="true" />
