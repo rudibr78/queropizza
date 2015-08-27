@@ -27,7 +27,6 @@
     <gap:plugin name="org.apache.cordova.geolocation" version="0.3.10" />
     <gap:plugin name="org.apache.cordova.dialogs" version="0.2.10" />
     <gap:plugin name="org.apache.cordova.vibration" version="0.3.11" />
-    <gap:plugin name="org.apache.cordova.splashscreen" version="0.3.4" />
     -->
     
     <!-- 
@@ -37,6 +36,7 @@
     -->
     
     <!-- _________________________ -->
+    <gap:plugin name="org.apache.cordova.splashscreen" version="0.3.4" />
     
     <gap:plugin name="org.apache.cordova.contacts" version="0.2.13" />
     <gap:plugin name="org.apache.cordova.console" version="0.2.11" />
@@ -103,9 +103,7 @@
         <param name='ios-package' value='CDVConnection'/>    
     </feature>
     
-    
-    
-    <preference value='true' name='AutoHideSplashScreen'/>
+    <preference value='false' name='AutoHideSplashScreen'/>
     <!--
     <preference value='true' name='FadeSplashScreen'/>
     <preference value='.25' name='FadeSplashScreenDuration'/>
