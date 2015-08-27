@@ -6,20 +6,16 @@
         version   = "1.0.1"
         versionCode="101"
 >
-    <name>
-        Quero Pizza
-    </name>
-
-    <description>
-        Quero Pizza
-    </description>
-
-    <author href="https://multidadosti.com.br" email="rudi.feijo@multidadosti.com.br">
-        Multidados TI
-    </author>
+    <name>Quero Pizza</name>
+    <description>Quero Pizza</description>
+    <author href="https://multidadosti.com.br" email="rudi.feijo@multidadosti.com.br">Multidados TI</author>
+    
     <access origin="*"/>
         
-    <!-- <gap:plugin name="org.li8.inappbrowser" version="0.1" />     -->
+    <!-- passed -->
+    <gap:plugin name="org.li8.inappbrowser" version="0.1" />
+    <!-- /passed -->
+    <!-- 
     <gap:plugin name="org.apache.cordova.network-information" version="0.2.3" />
     <gap:plugin name="org.apache.cordova.camera" version="0.3.2" />
     
@@ -37,18 +33,12 @@
     <gap:plugin name="org.apache.cordova.contacts" version="0.2.13" />
     <gap:plugin name="org.apache.cordova.console" version="0.2.11" />
     
-    <!-- <feature name="http://api.phonegap.com/1.0/battery"/> -->
     <feature name="http://api.phonegap.com/1.0/camera"/>
-    <!-- <feature name="http://api.phonegap.com/1.0/contacts"/> -->
     <feature name="http://api.phonegap.com/1.0/file"/>
-    <!-- <feature name="http://api.phonegap.com/1.0/geolocation"/> -->
-    <!-- <feature name="http://api.phonegap.com/1.0/media"/> -->
     <feature name="http://api.phonegap.com/1.0/network"/>
     <feature name="http://api.phonegap.com/1.0/notification"/>
 
-    <!-- Preferences for Android -->
-    
-    <!-- Preferences for iOS -->
+    -->
     
     <!-- unpaginated, leftToRight, topToBottom, bottomToTop, rightToLeft -->
     <feature name='Geolocation'>
@@ -106,7 +96,7 @@
         <param value='CDVLocalStorage' name='ios-package'/>
     </feature>
     
-    <preference value='false' name='AutoHideSplashScreen'/>
+    <preference value='true' name='AutoHideSplashScreen'/>
     <!--
     <preference value='true' name='FadeSplashScreen'/>
     <preference value='.25' name='FadeSplashScreenDuration'/>
