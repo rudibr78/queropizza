@@ -19,6 +19,23 @@
     </author>
     <access origin="*"/>
     
+    <!-- splashscreen -->
+    <!-- <gap:plugin name="org.apache.cordova.splashscreen" version="0.3.4" /> -->
+    <gap:plugin name="org.apache.cordova.splashscreen" />
+    <!-- Do not auto hide splash on iOS -->
+    <preference name="AutoHideSplashScreen" value="false" />
+    <!-- 
+    <preference name="FadeSplashScreen" value="true"/>
+    <preference name="FadeSplashScreenDuration" value=".25"/>
+    <preference name="ShowSplashScreenSpinner" value="true"/>
+    -->
+    <!-- Do not auto hide splash on Android -->
+    <preference name="SplashScreenDelay" value="10000"/>
+    <feature name='SplashScreen'>
+        <param name='ios-package' value='CDVSplashScreen'/>
+    </feature>
+    <!-- /splashscreen -->
+    
     <gap:plugin name="com.phonegap.plugins.facebookconnect" version="0.9.0">
         <param name="APP_ID" value="1023654354365567" />
         <param name="APP_NAME" value="queropizza_prod" />
@@ -38,7 +55,7 @@
     <gap:plugin name="org.apache.cordova.geolocation" version="0.3.10" />
     <gap:plugin name="org.apache.cordova.dialogs" version="0.2.10" />
     <gap:plugin name="org.apache.cordova.vibration" version="0.3.11" />
-    <gap:plugin name="org.apache.cordova.splashscreen" version="0.3.4" />
+    
     <gap:plugin name="org.apache.cordova.device-orientation" version="0.3.9" />
     <gap:plugin name="org.apache.cordova.device-motion" version="0.2.10" />
     <gap:plugin name="org.apache.cordova.device" version="0.2.12" />
@@ -95,9 +112,6 @@
     <feature name='Battery'>
         <param name='ios-package' value='CDVBattery'/>
     </feature>
-    <feature name='SplashScreen'>
-        <param name='ios-package' value='CDVSplashScreen'/>
-    </feature>
     <feature name='Echo'>
         <param name='ios-package' value='CDVEcho'/>
     </feature>
@@ -118,16 +132,12 @@
     <preference value='false' name='MediaPlaybackRequiresUserAction'/>
     <preference value='true' name='OpenAllWhitelistURLsInWebView'/>
     
-    <preference value='true' name='AutoHideSplashScreen'/>
     <preference value='cloud' name='BackupWebStorage'/>
     <preference value='false' name='DisallowOverscroll'/>
     <preference value='false' name='EnableViewportScale'/>
-    <preference value='true' name='FadeSplashScreen'/>
-    <preference value='.25' name='FadeSplashScreenDuration'/>
     <preference value='false' name='HideKeyboardFormAccessoryBar'/>
     <preference value='true' name='KeyboardDisplayRequiresUserAction'/>
     <preference value='false' name='KeyboardShrinksView'/>
-    <preference value='true' name='ShowSplashScreenSpinner'/>
     <preference value='false' name='SuppressesIncrementalRendering'/>
     <preference value='gray' name='TopActivityIndicator'/>
     <preference value='0' name='GapBetweenPages'/>
