@@ -120,9 +120,6 @@
     <!-- page, column -->
     <preference value='unpaginated' name='PaginationMode'/>
 		
-    <preference name="StatusBarOverlaysWebView" value="false"/>
-    <preference name="StatusBarBackgroundColor" value="#EAEAEA" />
-    <preference name="stay-in-webview" value="false" />
 
     <icon src="app_res/images/icons/icon.png" />
     <!-- iPhone 6 / 6+ -->
