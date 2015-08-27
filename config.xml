@@ -67,8 +67,7 @@
     -->
     <gap:plugin name="org.apache.cordova.splashscreen" version="0.3.4" />
     
-    <!-- _________________________ -->
-
+    <!-- _________________________ 
     <feature name='FileTransfer'>        
         <param name='ios-package' value='CDVFileTransfer'/>    
     </feature>
@@ -98,7 +97,8 @@
     </feature>
     <feature name='Geolocation'>
         <param name='ios-package' value='CDVLocation'/>    
-    </feature>
+    </feature>-->
+
     
     <preference value='false' name='AutoHideSplashScreen'/>
     <!--
