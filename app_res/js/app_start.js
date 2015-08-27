@@ -28,7 +28,6 @@ function loadIniScript() {
 }
 
 function app_connected() {
-    return true;
     if (typeof navigator == 'undefined' || typeof Connection == 'undefined')
         return true;
 

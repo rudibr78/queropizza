@@ -40,12 +40,6 @@
     
     <gap:plugin name="org.apache.cordova.contacts" version="0.2.13" />
     <gap:plugin name="org.apache.cordova.console" version="0.2.11" />
-    
-    <feature name="http://api.phonegap.com/1.0/camera"/>
-    <feature name="http://api.phonegap.com/1.0/file"/>
-    <feature name="http://api.phonegap.com/1.0/network"/>
-    <feature name="http://api.phonegap.com/1.0/notification"/>
-
     <!-- _________________________ -->
 
     <feature name='FileTransfer'>        
