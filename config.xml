@@ -28,12 +28,10 @@
     <preference name="FadeSplashScreen" value="true"/>
     <preference name="FadeSplashScreenDuration" value=".25"/>
     <preference name="ShowSplashScreenSpinner" value="true"/>
+    <feature name='SplashScreen'><param name='ios-package' value='CDVSplashScreen'/></feature>
     -->
     <!-- Do not auto hide splash on Android -->
     <preference name="SplashScreenDelay" value="10000"/>
-    <feature name='SplashScreen'>
-        <param name='ios-package' value='CDVSplashScreen'/>
-    </feature>
     <!-- /splashscreen -->
     
     <gap:plugin name="com.phonegap.plugins.facebookconnect" version="0.9.0">
