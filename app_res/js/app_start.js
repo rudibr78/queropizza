@@ -55,7 +55,7 @@ function onOnline() {
         window.clearTimeout(CP.offline_warn_to);
     }
     if (!CP.online) {
-        if (jqm_rendered())
+        if (typeof jqm_rendered == 'function' && jqm_rendered())
             $.mobile.loading('hide');
     }
     CP.online = true;
@@ -72,7 +72,7 @@ function onOffline() {
 
         CP.online = false;
 
-        if (jqm_rendered())
+        if (typeof jqm_rendered == 'function' && jqm_rendered())
             $.mobile.loading('show', {
                 text: etext,
                 textVisible: true,
