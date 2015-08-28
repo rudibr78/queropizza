@@ -18,6 +18,7 @@
     <gap:plugin name="org.apache.cordova.geolocation" version="0.3.10" />
     
     <gap:plugin name="de.appplant.cordova.plugin.hidden-statusbar-overlay" version="1.2.0" />
+    <gap:plugin name="org.apache.cordova.network-information" version="0.2.12" />
     
     <!--
     <gap:plugin name="org.apache.cordova.network-information" version="0.2.12" />

@@ -28,15 +28,8 @@ function loadIniScript() {
 }
 
 function app_connected() {
-    if (typeof navigator == 'undefined' || typeof Connection == 'undefined')
+    if (typeof navigator == 'undefined' || typeof navigator.connection == 'undefined')
         return true;
-
-    //API antiga (com .network.)
-    if (typeof navigator.network != 'undefined'
-            && typeof navigator.network.connection != 'undefined'
-            && typeof navigator.network.connection.type != 'undefined'
-            && navigator.network.connection.type == Connection.NONE)
-        return false;
 
     //nova API (direto em navigator.connection)
     if (typeof navigator.connection != 'undefined'
@@ -46,6 +39,49 @@ function app_connected() {
 
     return true;
 }
+
+function onDeviceready() {
+    CP.deviceready = true;
+    //https://github.com/apache/cordova-plugin-network-information/blob/df7aac845dc7deddbdb76e89216776a802ee8b67/doc/index.md
+    //Applications typically should use document.addEventListener to attach an event listener once the deviceready event fires.
+    document.addEventListener("online", onOnline, false);
+    document.addEventListener("offline", onOffline, false);
+}
+
+function onOnline() {
+    if (typeof CP.offline_warn_to != 'undefined') {
+        window.clearTimeout(CP.offline_warn_to);
+    }
+    if (!CP.online) {
+        if (jqm_rendered())
+            $.mobile.loading('hide');
+    }
+    CP.online = true;
+}
+
+function onOffline() {
+
+    if (typeof CP.offline_warn_to != 'undefined') {
+        window.clearTimeout(CP.offline_warn_to);
+    }
+
+    CP.offline_warn_to = window.setTimeout(function() {
+
+        CP.online = false;
+
+        if (jqm_rendered())
+            $.mobile.loading('show', {
+                text: etext,
+                textVisible: true,
+                theme: 'b'
+            });
+        else
+            alert(MSG_SEM_NET);
+    }, 5000)
+
+}
+
+document.addEventListener("deviceready", onDeviceready, false);
 
 $(function() {
     var wait_one_int = true;
