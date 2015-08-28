@@ -19,7 +19,7 @@
     
     <gap:plugin name="org.apache.cordova.network-information" version="0.2.12" />
     
-    <gap:plugin name="com.phonegap.plugin.statusbar" version="1.1.0" /> 
+    <gap:plugin name="cordova-plugin-statusbar" source="npm" />
     <feature name="StatusBar">
         <param name="ios-package" value="CDVStatusBar" onload="true" />
     </feature>
