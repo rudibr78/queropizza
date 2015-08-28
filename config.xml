@@ -20,12 +20,7 @@
     <gap:plugin name="com.kerosieben.cordova.plugins.ios7scrollfix" version="0.1.0" />
     <preference name="IOS7PreventWebViewScrolling" value="true"/>
     
-    <gap:plugin name="com.phonegap.plugin.statusbar" version="1.1.0" /> 
-    <feature name="StatusBar">
-        <param name="ios-package" value="CDVStatusBar" onload="true" />
-    </feature>
-
-    <!-- <gap:plugin name="de.appplant.cordova.plugin.hidden-statusbar-overlay" version="1.2.0" /> -->
+    <gap:plugin name="de.appplant.cordova.plugin.hidden-statusbar-overlay" version="1.2.0" />
     
     
     <!-- nao tem pq habilitar :
