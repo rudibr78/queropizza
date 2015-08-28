@@ -17,13 +17,10 @@
     <gap:plugin name="com.phonegap.plugins.pushplugin" version="2.4.0" />
     <gap:plugin name="org.apache.cordova.geolocation" version="0.3.10" />
     
-    <gap:plugin name="com.kerosieben.cordova.plugins.ios7scrollfix" version="0.1.0" />
-    <preference name="IOS7PreventWebViewScrolling" value="true"/>
-    
     <gap:plugin name="de.appplant.cordova.plugin.hidden-statusbar-overlay" version="1.2.0" />
     
-    
-    <!-- nao tem pq habilitar :
+    <!--
+    <gap:plugin name="org.apache.cordova.network-information" version="0.2.12" />
     <gap:plugin name="org.apache.cordova.camera" version="0.3.2" />
     
     <gap:plugin name="org.apache.cordova.media-capture" version="0.3.3" />
