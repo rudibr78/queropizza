@@ -17,10 +17,19 @@
     <gap:plugin name="com.phonegap.plugins.pushplugin" version="2.4.0" />
     <gap:plugin name="org.apache.cordova.geolocation" version="0.3.10" />
     
-    <gap:plugin name="de.appplant.cordova.plugin.hidden-statusbar-overlay" version="1.2.0" />
     <gap:plugin name="org.apache.cordova.network-information" version="0.2.12" />
     
+    <gap:plugin name="com.phonegap.plugin.statusbar" version="1.1.0" /> 
+    <feature name="StatusBar">
+        <param name="ios-package" value="CDVStatusBar" onload="true" />
+    </feature>
+    <preference name="StatusBarOverlaysWebView" value="true"/>
+    <preference name="StatusBarBackgroundColor" value="#EAEAEA" />
+    <preference name="stay-in-webview" value="true" />
+    
     <!--
+    <gap:plugin name="de.appplant.cordova.plugin.hidden-statusbar-overlay" version="1.2.0" />
+    
     <gap:plugin name="org.apache.cordova.network-information" version="0.2.12" />
     <gap:plugin name="org.apache.cordova.camera" version="0.3.2" />
     
@@ -71,9 +80,6 @@
     <feature name='Echo'>        
         <param name='ios-package' value='CDVEcho'/>    
     </feature>
-    <feature name="StatusBar">
-        <param name="ios-package" value="CDVStatusBar" onload="true" />
-    </feature>
     -->
     <feature name='Globalization'>        
         <param name='ios-package' value='CDVGlobalization'/>    
@@ -121,9 +127,6 @@
     <!-- page, column -->
     <preference value='unpaginated' name='PaginationMode'/>
 		
-    <preference name="StatusBarOverlaysWebView" value="true"/>
-    <preference name="StatusBarBackgroundColor" value="#EAEAEA" />
-    <preference name="stay-in-webview" value="true" />
 
     <icon src="app_res/images/icons/icon.png" />
     <!-- iPhone 6 / 6+ -->
