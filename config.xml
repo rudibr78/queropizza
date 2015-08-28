@@ -16,7 +16,7 @@
     <gap:plugin name="org.apache.cordova.inappbrowser" version="0.5.2" />
     <gap:plugin name="com.phonegap.plugins.pushplugin" version="2.4.0" />
     <gap:plugin name="de.appplant.cordova.plugin.hidden-statusbar-overlay" version="1.2.0" />
-    <!-- <gap:plugin name="org.apache.cordova.network-information" version="0.2.12" /> -->
+    <gap:plugin name="org.apache.cordova.network-information" version="0.2.12" />
     <gap:plugin name="org.apache.cordova.geolocation" version="0.3.10" />
     
     <!-- nao tem pq habilitar :
@@ -69,6 +69,9 @@
     <feature name='Echo'>        
         <param name='ios-package' value='CDVEcho'/>    
     </feature>
+    <feature name="StatusBar">
+        <param name="ios-package" value="CDVStatusBar" onload="true" />
+    </feature>
     -->
 
     <feature name='Globalization'>        
@@ -91,9 +94,6 @@
     </feature>
     <feature name='Geolocation'>
         <param name='ios-package' value='CDVLocation'/>    
-    </feature>
-    <feature name="StatusBar">
-        <param name="ios-package" value="CDVStatusBar" onload="true" />
     </feature>
     
     <preference value='false' name='AutoHideSplashScreen'/>
