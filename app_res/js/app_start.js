@@ -41,6 +41,7 @@ function app_connected() {
 }
 
 function onDeviceready() {
+    alert('onDeviceready')
     CP.deviceready = true;
     //https://github.com/apache/cordova-plugin-network-information/blob/df7aac845dc7deddbdb76e89216776a802ee8b67/doc/index.md
     //Applications typically should use document.addEventListener to attach an event listener once the deviceready event fires.
@@ -49,6 +50,7 @@ function onDeviceready() {
 }
 
 function onOnline() {
+    alert('onOnline')
     if (typeof CP.offline_warn_to != 'undefined') {
         window.clearTimeout(CP.offline_warn_to);
     }
@@ -60,6 +62,7 @@ function onOnline() {
 }
 
 function onOffline() {
+    alert('onOffline')
 
     if (typeof CP.offline_warn_to != 'undefined') {
         window.clearTimeout(CP.offline_warn_to);
