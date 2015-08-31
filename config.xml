@@ -12,7 +12,6 @@
     
     <access origin="*"/>
         
-    <gap:plugin name="org.apache.cordova.splashscreen" version="0.3.4" />
     <gap:plugin name="org.apache.cordova.inappbrowser" version="0.5.2" />
     <gap:plugin name="com.phonegap.plugins.pushplugin" version="2.4.0" />
     <gap:plugin name="org.apache.cordova.geolocation" version="0.3.10" />
@@ -94,9 +93,6 @@
     <feature name='Globalization'>        
         <param name='ios-package' value='CDVGlobalization'/>    
     </feature>
-    <feature name='SplashScreen'>        
-        <param name='ios-package' value='CDVSplashScreen'/>    
-    </feature>
     <feature name='InAppBrowser'>        
         <param name='ios-package' value='CDVInAppBrowser'/>    
     </feature>
@@ -110,12 +106,6 @@
         <param name='ios-package' value='CDVLocation'/>    
     </feature>
     
-    <preference value='false' name='AutoHideSplashScreen'/>
-    <!--
-    <preference value='true' name='FadeSplashScreen'/>
-    <preference value='.25' name='FadeSplashScreenDuration'/>
-    <preference value='true' name='ShowSplashScreenSpinner'/>
-    -->
     <preference value='true' name='AllowInlineMediaPlayback'/>
     <preference value='false' name='MediaPlaybackRequiresUserAction'/>
     <preference value='true' name='OpenAllWhitelistURLsInWebView'/>
@@ -181,7 +171,21 @@
    
     <!-- Windows Phone icons -->
     <icon src="app_res/images/icons/wp/icon.png" gap:platform="winphone" />
-	
+    
+    <gap:plugin name="org.apache.cordova.splashscreen" version="0.3.4" />
+    <feature name="SplashScreen" value="SplashScreen" />
+        <param name="android-package" value="org.apache.cordova.splashscreen.SplashScreen" />
+        <param name="ios-package" value="CDVSplashScreen" />
+    </feature>
+    <preference name="SplashScreen" value="splash" />
+    <preference name="AutoHideSplashScreen" value="false" />
+    <!--
+    <preference value='true' name='FadeSplashScreen'/>
+    <preference value='.25' name='FadeSplashScreenDuration'/>
+    <preference value='true' name='ShowSplashScreenSpinner'/>
+    -->
+    <!-- default splash -->
+    <gap:splash src="app_res/images/splashes/wp/splash.jpg" />
 	
     <gap:splash src="app_res/images/splashes/splash.png" />
     <!-- iPhone and iPod touch -->
