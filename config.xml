@@ -173,7 +173,7 @@
     <icon src="app_res/images/icons/wp/icon.png" gap:platform="winphone" />
     
     <gap:plugin name="org.apache.cordova.splashscreen" version="0.3.4" />
-    <feature name="SplashScreen" value="SplashScreen" />
+    <feature name="SplashScreen" value="SplashScreen">
         <param name="android-package" value="org.apache.cordova.splashscreen.SplashScreen" />
         <param name="ios-package" value="CDVSplashScreen" />
     </feature>
