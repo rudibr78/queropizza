@@ -40,13 +40,6 @@ function app_connected() {
     return true;
 }
 
-function onDeviceready() {
-    CP.deviceready = true;
-    //https://github.com/apache/cordova-plugin-network-information/blob/df7aac845dc7deddbdb76e89216776a802ee8b67/doc/index.md
-    //Applications typically should use document.addEventListener to attach an event listener once the deviceready event fires.
-    document.addEventListener("online", onOnline, false);
-    document.addEventListener("offline", onOffline, false);
-}
 
 function onOnline() {
     if (typeof CP.offline_warn_to != 'undefined') {
@@ -78,6 +71,14 @@ function onOffline() {
             alert(MSG_SEM_NET);
     }, 5000)
 
+}
+
+function onDeviceready() {
+    CP.deviceready = true;
+    //https://github.com/apache/cordova-plugin-network-information/blob/df7aac845dc7deddbdb76e89216776a802ee8b67/doc/index.md
+    //Applications typically should use document.addEventListener to attach an event listener once the deviceready event fires.
+    document.addEventListener("online", onOnline, false);
+    document.addEventListener("offline", onOffline, false);
 }
 
 document.addEventListener("deviceready", onDeviceready, false);
