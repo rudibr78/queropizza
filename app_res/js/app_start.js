@@ -16,10 +16,6 @@ if (localStorage.getItem('destktop_version') != 1) {
     CP.URL_APP = 'http://' + window.location.host + '/m_apps/queropizzaw/';
 }
 
-if (typeof navigator != 'undefined' &&
-        typeof navigator.notification != 'undefined' &&
-        typeof navigator.notification.alert == 'function')
-    window.alert = navigator.notification.alert;
 
 function nalert(message, title, buttonName, alertCallback) {
     if (!title)
@@ -40,16 +36,13 @@ function nalert(message, title, buttonName, alertCallback) {
 function startApp() {
     var wait_one_int = true;
     if (app_connected()) {
-        alert('app c')
         loadIniScript();
     } else {
         window.init_interval = window.setInterval(function() {
             if (app_connected()) {
-                alert('app c 2')
                 window.clearInterval(window.init_interval);
                 loadIniScript();
             } else {
-                alert('app n c')
                 if (wait_one_int) {
                     wait_one_int = false;
                 } else {
@@ -123,6 +116,12 @@ function onOffline() {
 
 function onDeviceready() {
     CP.deviceready = true;
+
+    if (typeof navigator != 'undefined' &&
+            typeof navigator.notification != 'undefined' &&
+            typeof navigator.notification.alert == 'function')
+        window.alert = navigator.notification.alert;
+
     //https://github.com/apache/cordova-plugin-network-information/blob/df7aac845dc7deddbdb76e89216776a802ee8b67/doc/index.md
     //Applications typically should use document.addEventListener to attach an event listener once the deviceready event fires.
     document.addEventListener("online", onOnline, false);
