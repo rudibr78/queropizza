@@ -21,13 +21,13 @@ if (typeof navigator != 'undefined' &&
         typeof navigator.notification.alert == 'function')
     window.alert = navigator.notification.alert;
 
-function nalert(message, alertCallback, title, buttonName) {
+function nalert(message, title, buttonName, alertCallback) {
     if (!title)
         title = '';
-    
+
     if (!buttonName)
         buttonName = 'OK';
-    
+
     if (typeof navigator == 'undefined' ||
             typeof navigator.notification == 'undefined' ||
             typeof navigator.notification.alert != 'function') {
