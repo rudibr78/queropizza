@@ -26,6 +26,13 @@
     <preference name="stay-in-webview" value="true" />
      
     <gap:plugin name="org.apache.cordova.dialogs" version="0.2.10" />
+    <feature name="Vibration">
+        <param name="android-package" value="org.apache.cordova.vibration.Vibration" />
+    </feature>
+    <feature name="Notification">
+        <param name="ios-package" value="CDVNotification" />
+        <param name="android-package" value="org.apache.cordova.dialogs.Notification" />
+    </feature>
      
     <!--
     <gap:plugin name="de.appplant.cordova.plugin.hidden-statusbar-overlay" version="1.2.0" />
