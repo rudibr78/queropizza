@@ -1,6 +1,6 @@
 CP = {online: true};
 CP.APP_NAME = 'queropizza';
-CP.VERSION = '0.0.1';
+CP.VERSION = '0.0.2';
 CP.jsv = Math.ceil(Math.random() * 999999999999999) + 1;
 
 if (window.location.href.indexOf('desktop=on') !== -1) {
@@ -95,6 +95,9 @@ $(function() {
                 if (wait_one_int) {
                     wait_one_int = false;
                 } else {
+                    if (typeof navigator.splashscreen == 'object') {
+                        navigator.splashscreen.hide();
+                    }
                     $('#divsemnet').remove();
                     $('body').append('<div id="divsemnet" style="font-family:Arial">' + MSG_SEM_NET + '</div>');
                 }
