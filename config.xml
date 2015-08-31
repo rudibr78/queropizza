@@ -185,9 +185,8 @@
     <preference value='true' name='ShowSplashScreenSpinner'/>
     -->
     <!-- default splash -->
-    <gap:splash src="app_res/images/splashes/wp/splash.jpg" />
-	
-    <gap:splash src="app_res/images/splashes/splash.png" />
+    <gap:splash src="app_res/images/splashes/splash-port.png" />
+    
     <!-- iPhone and iPod touch -->
     <gap:splash src="app_res/images/splashes/ios/splash_320x480.png" gap:platform="ios" width="320" height="480" />
     <gap:splash src="app_res/images/splashes/ios/splash_640x960.png" gap:platform="ios" width="640" height="960" />
