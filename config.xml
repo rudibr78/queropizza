@@ -12,12 +12,17 @@
     
     <access origin="*"/>
         
+    <gap:plugin name="org.apache.cordova.network-information" version="0.2.12" />
+    <feature name="NetworkStatus" value="NetworkStatus" />      
+        <param name="android-package" value="org.apache.cordova.networkinformation.NetworkManager" />
+        <param name="ios-package" value="CDVConnection" />
+    </feature>
+
     <gap:plugin name="org.apache.cordova.splashscreen" version="0.3.4" />
     <gap:plugin name="org.apache.cordova.inappbrowser" version="0.5.2" />
     <gap:plugin name="com.phonegap.plugins.pushplugin" version="2.4.0" />
     <gap:plugin name="org.apache.cordova.geolocation" version="0.3.10" />
     
-    <gap:plugin name="org.apache.cordova.network-information" version="0.2.12" />
     
     <gap:plugin name="com.phonegap.plugin.statusbar" version="1.1.0" /> 
     <feature name="StatusBar">
@@ -90,9 +95,6 @@
     -->
     <feature name='Globalization'>        
         <param name='ios-package' value='CDVGlobalization'/>    
-    </feature>
-    <feature name='NetworkStatus'>        
-        <param name='ios-package' value='CDVConnection'/>    
     </feature>
     <feature name='SplashScreen'>        
         <param name='ios-package' value='CDVSplashScreen'/>    

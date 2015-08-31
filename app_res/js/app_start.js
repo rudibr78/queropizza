@@ -37,6 +37,32 @@ function nalert(message, title, buttonName, alertCallback) {
     }
 }
 
+function startApp() {
+    var wait_one_int = true;
+    if (app_connected()) {
+        alert('app c')
+        loadIniScript();
+    } else {
+        window.init_interval = window.setInterval(function() {
+            if (app_connected()) {
+                alert('app c 2')
+                window.clearInterval(window.init_interval);
+                loadIniScript();
+            } else {
+                alert('app n c')
+                if (wait_one_int) {
+                    wait_one_int = false;
+                } else {
+                    if (typeof navigator.splashscreen == 'object') {
+                        navigator.splashscreen.hide();
+                    }
+                    $('#divsemnet').remove();
+                    $('body').append('<div id="divsemnet" style="font-family:Arial">' + MSG_SEM_NET + '</div>');
+                }
+            }
+        }, 1000);
+    }
+}
 
 function loadIniScript() {
     var src = CP.URL_APP + 'js/app.js';
@@ -90,7 +116,7 @@ function onOffline() {
                 theme: 'b'
             });
         else
-            nalert(MSG_SEM_NET,'Sem conexão');
+            nalert(MSG_SEM_NET, 'Sem conexão');
     }, 5000)
 
 }
@@ -101,33 +127,15 @@ function onDeviceready() {
     //Applications typically should use document.addEventListener to attach an event listener once the deviceready event fires.
     document.addEventListener("online", onOnline, false);
     document.addEventListener("offline", onOffline, false);
+    startApp();
 }
 
-document.addEventListener("deviceready", onDeviceready, false);
 
-$(function() {
-    var wait_one_int = true;
-    if (app_connected()) {
-        alert('app c')
-        loadIniScript();
-    } else {
-        window.init_interval = window.setInterval(function() {
-            if (app_connected()) {
-                alert('app c 2')
-                window.clearInterval(window.init_interval);
-                loadIniScript();
-            } else {
-                alert('app n c')
-                if (wait_one_int) {
-                    wait_one_int = false;
-                } else {
-                    if (typeof navigator.splashscreen == 'object') {
-                        navigator.splashscreen.hide();
-                    }
-                    $('#divsemnet').remove();
-                    $('body').append('<div id="divsemnet" style="font-family:Arial">' + MSG_SEM_NET + '</div>');
-                }
-            }
-        }, 1000);
-    }
-});
+if (localStorage.getItem('destktop_version') != 1) {
+    document.addEventListener("deviceready", onDeviceready, false);
+} else {
+    $(function() {
+        startApp();
+    });
+}
+
