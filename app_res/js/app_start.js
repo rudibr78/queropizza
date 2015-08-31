@@ -3,10 +3,7 @@ CP.APP_NAME = 'queropizza';
 CP.VERSION = '0.0.3';
 CP.jsv = Math.ceil(Math.random() * 999999999999999) + 1;
 
-if (typeof navigator != 'undefined' &&
-        typeof navigator.notification != 'undefined' &&
-        typeof navigator.notification.alert == 'function')
-    window.alert = navigator.notification.alert;
+MSG_SEM_NET = "Sua conexão com a internet parece estar desligada. Por favor verifique sua conexão e tente de novo.";
 
 if (window.location.href.indexOf('desktop=on') !== -1) {
     localStorage.setItem('destktop_version', 1);
@@ -19,7 +16,27 @@ if (localStorage.getItem('destktop_version') != 1) {
     CP.URL_APP = 'http://' + window.location.host + '/m_apps/queropizzaw/';
 }
 
-MSG_SEM_NET = "Sua conexão com a internet parece estar desligada. Por favor verifique sua conexão e tente de novo.";
+if (typeof navigator != 'undefined' &&
+        typeof navigator.notification != 'undefined' &&
+        typeof navigator.notification.alert == 'function')
+    window.alert = navigator.notification.alert;
+
+function nalert(message, alertCallback, title, buttonName) {
+    if (!title)
+        title = '';
+    
+    if (!buttonName)
+        buttonName = 'OK';
+    
+    if (typeof navigator == 'undefined' ||
+            typeof navigator.notification == 'undefined' ||
+            typeof navigator.notification.alert != 'function') {
+        alert(msg);
+    } else {
+        navigator.notification.alert(message, alertCallback, title, buttonName)
+    }
+}
+
 
 function loadIniScript() {
     var src = CP.URL_APP + 'js/app.js';
@@ -73,7 +90,7 @@ function onOffline() {
                 theme: 'b'
             });
         else
-            alert(MSG_SEM_NET);
+            nalert(MSG_SEM_NET);
     }, 5000)
 
 }
