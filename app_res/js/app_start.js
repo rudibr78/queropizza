@@ -104,7 +104,7 @@ function onOffline() {
 
         if (typeof jqm_rendered == 'function' && jqm_rendered())
             $.mobile.loading('show', {
-                text: etext,
+                text: MSG_SEM_NET,
                 textVisible: true,
                 theme: 'b'
             });
@@ -125,7 +125,7 @@ function onDeviceready() {
     //https://github.com/apache/cordova-plugin-network-information/blob/df7aac845dc7deddbdb76e89216776a802ee8b67/doc/index.md
     //Applications typically should use document.addEventListener to attach an event listener once the deviceready event fires.
     document.addEventListener("online", onOnline, false);
-    document.addEventListener("offline", onOffline, false);
+    document.addEventListener("offline", onOffline, false);alert(app_connected()?'Sim':'Nao')
     startApp();
 }
 
