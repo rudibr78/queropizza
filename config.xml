@@ -3,8 +3,8 @@
         xmlns:gap = "http://phonegap.com/ns/1.0"
         xmlns:android = "http://schemas.android.com/apk/res/android"
         id        = "com.phonegap.queropizza"
-        version   = "0.0.2"
-        versionCode="002"
+        version   = "0.0.3"
+        versionCode="003"
 >
     <name>Quero Pizza</name>
     <description>Quero Pizza</description>
@@ -24,6 +24,8 @@
         <param name="ios-package" value="CDVStatusBar" onload="true" />
     </feature>
     <preference name="stay-in-webview" value="true" />
+     
+    <gap:plugin name="org.apache.cordova.dialogs" version="0.2.10" />
      
     <!--
     <gap:plugin name="de.appplant.cordova.plugin.hidden-statusbar-overlay" version="1.2.0" />
