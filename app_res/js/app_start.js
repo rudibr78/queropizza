@@ -108,13 +108,16 @@ document.addEventListener("deviceready", onDeviceready, false);
 $(function() {
     var wait_one_int = true;
     if (app_connected()) {
+        alert('app c')
         loadIniScript();
     } else {
         window.init_interval = window.setInterval(function() {
             if (app_connected()) {
+                alert('app c 2')
                 window.clearInterval(window.init_interval);
                 loadIniScript();
             } else {
+                alert('app n c')
                 if (wait_one_int) {
                     wait_one_int = false;
                 } else {
