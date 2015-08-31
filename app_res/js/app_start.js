@@ -3,7 +3,8 @@ CP.APP_NAME = 'queropizza';
 CP.VERSION = '0.0.3';
 CP.jsv = Math.ceil(Math.random() * 999999999999999) + 1;
 
-window.alert = navigator.notification.alert;
+if (typeof navigator != 'undefined' && typeof navigator.notification != 'undefined' && typeof navigator.notification.alert == 'function')
+    window.alert = navigator.notification.alert;
 
 if (window.location.href.indexOf('desktop=on') !== -1) {
     localStorage.setItem('destktop_version', 1);
