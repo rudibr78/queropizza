@@ -3,7 +3,7 @@ CP.APP_NAME = 'queropizza';
 CP.VERSION = '0.0.3';
 CP.jsv = Math.ceil(Math.random() * 999999999999999) + 1;
 
-MSG_SEM_NET = "Sua conexão com a internet parece estar desligada. Por favor verifique sua conexão e tente de novo.";
+MSG_SEM_NET = "Este aplicativo precisa de internet. Por favor verifique sua conexão e tente de novo.";
 
 if (window.location.href.indexOf('desktop=on') !== -1) {
     localStorage.setItem('destktop_version', 1);
@@ -90,7 +90,7 @@ function onOffline() {
                 theme: 'b'
             });
         else
-            nalert(MSG_SEM_NET);
+            nalert(MSG_SEM_NET,'Sem conexão');
     }, 5000)
 
 }
