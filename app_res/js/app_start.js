@@ -54,7 +54,7 @@ function show_div_sem_net() {
     var html = '<div id="divsemnet" style="font-family:Arial">'
             + MSG_SEM_NET
             + '<br><center>'
-            + '<img src="' + CP.URL_APP + 'imgs/sem_net.png">'
+            + '<img src="app_res/images/icons/sem_net.png">'
             + '</center>'
             + '</div>';
     $('body').append(html);
