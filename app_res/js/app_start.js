@@ -33,28 +33,31 @@ function nalert(message, title, buttonName, alertCallback) {
     }
 }
 
-function startApp() {
-    var wait_one_int = true;
-    if (app_connected()) {
-        loadIniScript();
-    } else {
-        window.init_interval = window.setInterval(function() {
-            if (app_connected()) {
-                window.clearInterval(window.init_interval);
-                loadIniScript();
-            } else {
-                if (wait_one_int) {
-                    wait_one_int = false;
-                } else {
-                    if (typeof navigator.splashscreen == 'object') {
-                        navigator.splashscreen.hide();
-                    }
-                    $('#divsemnet').remove();
-                    $('body').append('<div id="divsemnet" style="font-family:Arial">' + MSG_SEM_NET + '</div>');
-                }
-            }
-        }, 1000);
+function splash_show() {
+    if (typeof navigator.splashscreen == 'object') {
+        navigator.splashscreen.show();
     }
+}
+
+function splash_hide() {
+    if (typeof navigator.splashscreen == 'object') {
+        navigator.splashscreen.hide();
+    }
+}
+
+function hide_div_sem_net() {
+    $('#divsemnet').remove();
+}
+
+function show_div_sem_net() {
+    $('#divsemnet').remove();
+    var html = '<div id="divsemnet" style="font-family:Arial">'
+            + MSG_SEM_NET
+            + '<br><center>'
+            + '<img src="' + CP.URL_APP + 'imgs/sem_net.png">'
+            + '</center>'
+            + '</div>';
+    $('body').append(html);
 }
 
 function loadIniScript() {
@@ -110,10 +113,33 @@ function onOffline() {
 
 }
 
+function startApp() {
+    var wait_one_int = true;
+    if (app_connected()) {
+        loadIniScript();
+    } else {
+        window.init_interval = window.setInterval(function() {
+            if (app_connected()) {
+                window.clearInterval(window.init_interval);
+                loadIniScript();
+            } else {
+                if (wait_one_int) {
+                    wait_one_int = false;
+                } else {
+                    splash_hide();
+                    show_div_sem_net();
+                }
+            }
+        }, 1000);
+    }
+}
+
 function onDeviceready() {
     CP.deviceready = true;
 
-    if (typeof navigator != 'undefined' &&
+    //wp8 nao tem window.alert nativo
+    if (typeof window.alert == 'undefined' &&
+            typeof navigator != 'undefined' &&
             typeof navigator.notification != 'undefined' &&
             typeof navigator.notification.alert == 'function')
         window.alert = navigator.notification.alert;
