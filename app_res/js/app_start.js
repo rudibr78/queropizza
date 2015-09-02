@@ -1,6 +1,6 @@
 CP = {online: true};
 CP.APP_NAME = 'queropizza';
-CP.VERSION = '0.0.3';
+CP.VERSION = '0.0.5';
 CP.jsv = Math.ceil(Math.random() * 999999999999999) + 1;
 
 MSG_SEM_NET = "Este aplicativo precisa de internet. Por favor verifique sua conexão e tente de novo.";

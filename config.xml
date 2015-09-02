@@ -3,8 +3,8 @@
         xmlns:gap = "http://phonegap.com/ns/1.0"
         xmlns:android = "http://schemas.android.com/apk/res/android"
         id        = "com.phonegap.queropizza"
-        version   = "0.0.3"
-        versionCode="003"
+        version   = "0.0.5"
+        versionCode="005"
 >
     <name>Quero Pizza</name>
     <description>Quero Pizza</description>
@@ -177,9 +177,10 @@
         <param name="android-package" value="org.apache.cordova.splashscreen.SplashScreen" />
         <param name="ios-package" value="CDVSplashScreen" />
     </feature>
-    <preference name="SplashScreen" value="splash" />
     <preference name="AutoHideSplashScreen" value="false" />
+    <preference name="SplashScreenDelay" value="20000" />
     <!--
+    <preference name="SplashScreen" value="splash" />
     <preference value='true' name='FadeSplashScreen'/>
     <preference value='.25' name='FadeSplashScreenDuration'/>
     <preference value='true' name='ShowSplashScreenSpinner'/>
