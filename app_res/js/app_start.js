@@ -27,7 +27,7 @@ function nalert(message, title, buttonName, alertCallback) {
     if (typeof navigator == 'undefined' ||
             typeof navigator.notification == 'undefined' ||
             typeof navigator.notification.alert != 'function') {
-        alert(msg);
+        alert(message);
     } else {
         navigator.notification.alert(message, alertCallback, title, buttonName)
     }
