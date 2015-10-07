@@ -6,7 +6,7 @@
         version   = "0.0.5"
         versionCode="005"
 >
-    <preference name="phonegap-version" value="cli-5.1.1" />
+    <preference name="phonegap-version" value="3.7.0" />
     <name>Quero Pizza</name>
     <description>Quero Pizza</description>
     <author href="https://multidadosti.com.br" email="rudi.feijo@multidadosti.com.br">Multidados TI</author>
