@@ -60,7 +60,7 @@ function show_div_sem_net() {
     $('body').append(html);
 }
 
-function loadIniScript() {alert('loadIniScript');
+function loadIniScript() {
     var src = CP.URL_APP + 'js/app.js';
     src += '?v=' + CP.jsv;
 
@@ -68,7 +68,7 @@ function loadIniScript() {alert('loadIniScript');
     fileref.setAttribute("type", "text/javascript");
     fileref.setAttribute("src", src);
 
-    document.getElementsByTagName("head")[0].appendChild(fileref);alert('loadIniScript ok ');
+    document.getElementsByTagName("head")[0].appendChild(fileref);
 }
 
 function app_connected() {
@@ -114,13 +114,10 @@ function onOffline() {
 }
 
 function startApp() {
-    alert('startApp');
     var wait_one_int = true;
     if (app_connected()) {
-        alert('app_connected');
         loadIniScript();
     } else {
-        alert('!app_connected');
         window.init_interval = window.setInterval(function() {
             if (app_connected()) {
                 window.clearInterval(window.init_interval);
