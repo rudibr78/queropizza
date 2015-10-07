@@ -60,7 +60,7 @@ function show_div_sem_net() {
     $('body').append(html);
 }
 
-function loadIniScript() {
+function loadIniScript() {console.log('loadIniScript');
     var src = CP.URL_APP + 'js/app.js';
     src += '?v=' + CP.jsv;
 
@@ -68,7 +68,7 @@ function loadIniScript() {
     fileref.setAttribute("type", "text/javascript");
     fileref.setAttribute("src", src);
 
-    document.getElementsByTagName("head")[0].appendChild(fileref);
+    document.getElementsByTagName("head")[0].appendChild(fileref);console.log('loadIniScript ok ');
 }
 
 function app_connected() {
@@ -114,10 +114,13 @@ function onOffline() {
 }
 
 function startApp() {
+    console.log('startApp');
     var wait_one_int = true;
     if (app_connected()) {
+        console.log('app_connected');
         loadIniScript();
     } else {
+        console.log('!app_connected');
         window.init_interval = window.setInterval(function() {
             if (app_connected()) {
                 window.clearInterval(window.init_interval);
