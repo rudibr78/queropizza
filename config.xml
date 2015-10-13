@@ -9,17 +9,33 @@
     
     <!-- rudi 07/10/2015 a versao mais nova (5.2) do cordova crashava no android em qqer tentativa de carregar recursos externos (js, etc)-->
     <!-- forçando versao antiga -->
-    <preference name="phonegap-version" value="3.7.0" />
+    <!-- rudi 13/10/2015 : <preference name='phonegap-version' value='cli-5.2.0' /> -->
+    <!-- <preference name="phonegap-version" value="3.7.0" /> -->
+    <preference name='phonegap-version' value='cli-5.2.0' />
+    <!-- rudi 9/10/2015 webview novo : <gap:plugin name='org.crosswalk.engine' version='1.3.0' source='pgb' /> -->
+
+    <!-- rudi 14/10/2015 setar versao minima do sdk do android para backward compat (android 2.3+)) -->
+    <preference name="android-minSdkVersion" value="10" />
     
     <name>Quero Pizza</name>
+    
     <description>Quero Pizza</description>
+    
     <author href="https://multidadosti.com.br" email="rudi.feijo@multidadosti.com.br">Multidados TI</author>
     
-    <access origin="*"/>
-        
+    <access origin="*" />
+    
+    <!-- rudi 9/10/2015 precisa desse plugin de whitelist e essas configs pra funcionar no pgb 5.2+  -->
+    <gap:plugin name="cordova-plugin-whitelist" version="1.0.0" source="npm" />
+    <allow-navigation href="http://*/*" />
+    <allow-navigation href="https://*/*" />
+    <allow-navigation href="ftp://*/*" />
+    <allow-navigation href="data:*" />
+    <allow-intent href="*" /> 
+
     <gap:plugin name="org.apache.cordova.inappbrowser" source="npm" />
     <gap:plugin name="com.phonegap.plugins.pushplugin" version="2.4.0" />
-    <gap:plugin name="org.apache.cordova.geolocation" version="0.3.10" />
+    <gap:plugin name="org.apache.cordova.geolocation" source="npm" />
     
     <gap:plugin name="com.phonegap.plugin.statusbar" version="1.1.0" /> 
     <feature name="StatusBar">
@@ -27,7 +43,7 @@
     </feature>
     <preference name="stay-in-webview" value="true" />
      
-    <gap:plugin name="org.apache.cordova.dialogs" version="0.2.10" />
+    <gap:plugin name="org.apache.cordova.dialogs" source="npm" />
     <feature name="Vibration">
         <param name="android-package" value="org.apache.cordova.vibration.Vibration" />
     </feature>
@@ -36,7 +52,7 @@
         <param name="android-package" value="org.apache.cordova.dialogs.Notification" />
     </feature>
      
-    <gap:plugin name="org.apache.cordova.network-information" version="0.2.12" />
+    <gap:plugin name="org.apache.cordova.network-information" source="npm" />
     <feature name="NetworkStatus" value="NetworkStatus">
         <param name="android-package" value="org.apache.cordova.networkinformation.NetworkManager" />
         <param name="ios-package" value="CDVConnection" />
