@@ -132,6 +132,9 @@ controllers.controller('cardapio_ctrl', function(PizzariaService, PedidoService,
     clog('cardapio_ctrl');
     var item, last_divider = false, divider = false, mock_item = {};
 
+    if (!$stateParams.idcardapio)
+        $state.go('app.mesa');
+
     $scope.cardapio = $stateParams;
 
     $scope.itens = PizzariaService.get_itens_cardapio($stateParams.idcardapio);
@@ -148,9 +151,9 @@ controllers.controller('cardapio_ctrl', function(PizzariaService, PedidoService,
 controllers.controller('pedido_ctrl', function(localStorageService, PedidoService, $scope, $state) {
     clog('pedido_ctrl');
     $scope.estab = localStorageService.get('estab');
-   
-   $scope.itens_grid = PedidoService.get_itens_grid_pedido();
-   clog('itens_grid',$scope.itens_grid)
+
+    $scope.itens_grid = PedidoService.get_itens_grid_pedido();
+    clog('itens_grid', $scope.itens_grid)
     //console.dir(localStorageService.get('estab'))
 
     $scope.open_cardapio = function(cardapio) {
