@@ -57,7 +57,16 @@ controllers.controller('SessionCtrl', function($scope, $stateParams, Session) {
     $scope.session = Session.get({sessionId: $stateParams.sessionId});
 });
 
-controllers.controller('codpizzaria_ctrl', function(localStorageService, PizzariaService, $ionicHistory, $ionicViewSwitcher, $scope, $ionicPopup, $state) {
+controllers.controller('codpizzaria_ctrl', function(
+        localStorageService
+        , PizzariaService
+        , $ionicLoading
+        , $ionicHistory
+        , $ionicViewSwitcher
+        , $scope
+        , $ionicPopup
+        , $state
+        ) {
     clog('codpizzaria_ctrl');
     // if none of the above states are matched, use this as the fallback
     //inicializacao da pagina inicial (todo : ver se eh aqui o lugar correto pra fazer isso)
@@ -68,40 +77,39 @@ controllers.controller('codpizzaria_ctrl', function(localStorageService, Pizzari
     localStorageService.bind($scope, 'codpizzaria_model.cod');
 
     $scope.enviar_cod = function() {
-        PizzariaService.get_dados_pizzaria($scope.codpizzaria_model.cod).then(function successCallback(res) {
-            if (!res.data.success) {
-                $ionicPopup.alert({
-                    title: ''
-                    , content: res.data.msg
-                }).then(function(res) {
-                    //apos fechar alert
-                    //console.log('Test Alert Box');
-                });
-            } else {
-                console.log('res');
-                console.dir(res)
-                localStorageService.set('uid_estab', res.data.uid_estab);
-                localStorageService.set('estab', res.data.estab);
-                //$ionicViewSwitcher.nextDirection('forward');
-                //nao estava limpando dados da pizzaria antiga :
-                $ionicHistory.clearCache().then(function() {
-                    $state.go('app.mesa')
-                })
-            }
-            console.log('s');
-            console.dir(res);
-            // this callback will be called asynchronously
-            // when the response is available
-        }, function errorCallback(res) {
-            $ionicPopup.alert({
-                title: ''
-                , content: 'Não foi possível pesquisar o código informado'
-            })
-            console.log('e');
-            console.dir(res);
-            // called asynchronously if an error occurs
-            // or server returns response with an error status.
+        $ionicLoading.show({
+            template: 'Buscando pizzaria...'
+            , noBackdrop: true
         });
+        PizzariaService.get_dados_pizzaria($scope.codpizzaria_model.cod).then(
+                function(res) {
+                    // this callback will be called asynchronously
+                    // when the response is available
+                    if (!res.data.success) {
+                        $ionicPopup.alert({
+                            title: ''
+                            , content: res.data.msg
+                        }).then(function(res) {
+                            //apos fechar alert
+                            //console.log('Test Alert Box');
+                        });
+                    } else {
+                        clog(' get_dados_pizzaria res', res)
+                        //$ionicViewSwitcher.nextDirection('forward');
+                        //nao estava limpando dados da pizzaria antiga :
+                        $ionicHistory.clearCache().then(function() {
+                            $state.go('app.mesa')
+                        })
+                    }
+                },
+                function(res) {
+                    // called asynchronously if an error occurs
+                    // or server returns response with an error status.
+                    $ionicPopup.alert({
+                        title: ''
+                        , content: 'Não foi possível pesquisar o código informado'
+                    })
+                });
     };
 });
 
@@ -118,56 +126,44 @@ controllers.controller('mesa_ctrl', function(cfg, localStorageService, $http, $s
 });
 
 
-controllers.controller('pedido_ctrl', function(localStorageService, $scope, $state) {
+
+
+controllers.controller('cardapio_ctrl', function(PizzariaService, PedidoService, $ionicHistory, $stateParams, $scope, $state) {
+    clog('cardapio_ctrl');
+    var item, last_divider = false, divider = false, mock_item = {};
+
+    $scope.cardapio = $stateParams;
+
+    $scope.itens = PizzariaService.get_itens_cardapio($stateParams.idcardapio);
+
+    $scope.add_item_to_pedido = function(idcardapio_item) {
+        clog('add_item_to_pedido idcardapio_item=' + idcardapio_item)
+
+        PedidoService.add_item(idcardapio_item);
+        $ionicHistory.goBack();
+    }
+});
+
+
+controllers.controller('pedido_ctrl', function(localStorageService, PedidoService, $scope, $state) {
     clog('pedido_ctrl');
     $scope.estab = localStorageService.get('estab');
-    console.log('localStorageService.get("estab")')
-    console.dir(localStorageService.get('estab'))
+   
+   $scope.itens_grid = PedidoService.get_itens_grid_pedido();
+   clog('itens_grid',$scope.itens_grid)
     //console.dir(localStorageService.get('estab'))
 
     $scope.open_cardapio = function(cardapio) {
         $state.go('app.cardapio', cardapio);
     }
+
+    $scope.finalizar_pedido = function() {
+        alert('finalizar_pedido')
+    }
 });
 
+controllers.controller('pedido_atual_ctrl', function(PedidoService, $scope) {
+    clog('pedido_atual_ctrl');
 
-
-controllers.controller('cardapio_ctrl', function(localStorageService, $stateParams, $scope, $state) {
-    clog('cardapio_ctrl');
-    var item, last_divider = false, divider = false, mock_item = {};
-
-    $scope.estab = localStorageService.get('estab');
-    $scope.cardapio = $stateParams;
-
-    $scope.itens = [];
-    for (var i = 0; i < $scope.estab.cardapios_itens.length; i++) {
-        item = $scope.estab.cardapios_itens[i];
-        if (item.idcardapio != $stateParams.idcardapio)
-            continue;
-
-        divider = item.descricao_categoria;
-
-        if (last_divider === false || divider !== last_divider) {
-            mock_item = angular.copy(item);
-            mock_item.divider = true;
-            mock_item.nome_item = item.descricao_categoria;
-            mock_item.descricao = null;
-            mock_item.preco = null;
-            i--;
-            last_divider = divider;
-
-            $scope.itens.push(mock_item);
-        } else {
-            item.divider = false;
-
-            $scope.itens.push(item);
-        }
-    }
-
-    clog('itens', $scope.itens);
-
-    $scope.add_item_to_pedido = function(idcardapio_item) {
-        alert(idcardapio_item)
-    }
 });
 

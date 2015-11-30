@@ -115,6 +115,7 @@
             </ion-nav-buttons>
         </ion-nav-bar>
         <ion-nav-view name="menuContent"></ion-nav-view>
+    <div ui-view="pedido_atual"></div>
     </ion-side-menu-content>
 
     <ion-side-menu side="left">
@@ -161,6 +162,28 @@
             <button class="button button-full button-positive" ng-click="open_cardapio({{cardapio}})">
                 {{cardapio.desc_ui_cardapio}}
             </button>
+        </div>
+        <div ng-if="itens_grid.total.itens" class="grid_pedido">
+            <div class="row item grid_pedido_header grid_pedido_row">
+                <div class="col">Item</div>
+                <div class="col col-10">Qtde.</div>
+                <div class="col col-10 grid_pedido_preco">R$</div>
+            </div>
+            <div class="row item grid_pedido_row" ng-repeat="item in itens_grid.itens">
+                <div class="col">{{item.item_desc}}</div>
+                <div class="col col-10">{{item.qtde}}</div>
+                <div class="col col-10 grid_pedido_preco">{{item.preco_desc| currency:"R$ "}}</div>
+            </div>
+            <div class="row item grid_pedido_footer">
+                <div class="col col-90 grid_pedido_preco">Total</div>
+                <div class="col col-10 grid_pedido_preco">{{itens_grid.total.preco| currency:"R$ "}}</div>
+            </div>
+            <button class="button button-block button-assertive" ng-click="finalizar_pedido()">
+                Finalizar Pedido
+            </button>
+        </div>
+        <div ng-if="!itens_grid.total.itens">
+            nenhum item
         </div>
     </ion-content>
 </ion-view>

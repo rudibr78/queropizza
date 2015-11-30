@@ -14,3 +14,33 @@ function clog() {
         }
     }
 }
+
+//decimal de db (divisor ".") para visualizacao
+function toPreco(number) {
+    var str = number + '', nstr = '', spl = [];
+
+    if (str.indexOf('.') === -1) {
+        nstr = str + ',00';
+    } else {
+        spl = str.split('.');
+        nstr = spl[0];
+        switch (spl[1].length) {
+            case 1 :
+                nstr += ',' + spl[1] + '0';
+                break;
+            case 2 :
+                nstr += ',' + spl[1];
+                break;
+            default :
+                nstr += ',' + spl[1].substring(0, 2);
+                break;
+        }
+    }
+
+    return nstr;
+}
+
+//precisa dessa funcao pois multiplicar 2.4 * 3 = 7.19999 no javascript (floating point rounding error)
+function multiplyPreco(preco, qtde) {
+    return parseFloat((preco * qtde).toFixed(2));
+}

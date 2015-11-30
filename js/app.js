@@ -100,6 +100,7 @@ clog('config')
 
     $stateProvider.state('app.pedido', {
         url: "/pedido",
+        cache:false,
         views: {
             'menuContent': {
                 templateUrl: "/pedido.html",
