@@ -68,6 +68,8 @@
     </feature>
     <preference name="AutoHideSplashScreen" value="false" />
     <preference name="SplashScreenDelay" value="20000" />
+    
+    <plugin name="com.ionic.keyboard" spec="1.0.3" source="pgb" />
     <!--
     <preference name="SplashScreen" value="splash" />
     <preference value='true' name='FadeSplashScreen'/>
