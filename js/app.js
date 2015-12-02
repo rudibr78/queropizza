@@ -18,6 +18,7 @@ app.constant('cfg', {
 app.run(function($ionicPlatform) {
     $ionicPlatform.ready(function() {
         splash_hide();
+        document.body.style.display = '';
         ionic.Platform.isFullScreen = true;
         // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
         // for form inputs)
