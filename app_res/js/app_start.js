@@ -4,15 +4,14 @@ APP_INIT_INTERVAL = false;
 
 MSG_SEM_NET = "Este aplicativo precisa de internet. Por favor verifique sua conexão e tente de novo.";
 
-if (window.location.href.indexOf('desktop=on') !== -1) {
-    localStorage.setItem('destktop_version', 1);
-} else if (window.location.href.indexOf('desktop=off') !== -1) {
-    localStorage.removeItem('destktop_version');
+if (window.location.href.indexOf('dev=on') !== -1) {
+    localStorage.setItem('dev_version', 1);
+} else if (window.location.href.indexOf('dev=off') !== -1) {
+    localStorage.removeItem('dev_version');
 }
 
 function app_url() {
-        return 'http://m.multidadosti.com.br/m_apps/queropizzaw/';
-    if (localStorage.getItem('destktop_version') != 1) {
+    if (localStorage.getItem('dev_version') != 1) {
         return 'http://m.multidadosti.com.br/m_apps/queropizzaw/';
     } else {
         return 'http://' + window.location.host + '/m_apps/queropizzaw/';
@@ -201,7 +200,8 @@ function onDeviceready() {
 }
 
 //o event onDeviceready soh existe em mobile/cordova
-if (localStorage.getItem('destktop_version') != 1) {
+//!!window.cordova resolve true se for cordova
+if (!!window.cordova) {
     document.addEventListener("deviceready", onDeviceready, false);
 } else {
     onDeviceready();
