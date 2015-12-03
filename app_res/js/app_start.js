@@ -95,31 +95,53 @@ function show_div_sem_net() {
     document.body.appendChild(div);
 }
 
-function loadJsCss(src, callback) {
+// loads an individual script
+function loadScript(src) {
+    // generate promise
+    return new Promise(function(fulfill, reject) {
+        // create object var spl = src.split('?')[0];
+        var spl = src.split('?')[0];
+        var ext = spl.substring(spl.length - 4) == '.css' ? 'css' : 'js';
 
-    var spl = src.split('?')[0];
-    var ext = spl.substring(spl.length - 4) == '.css' ? 'css' : 'js';
+        //src += (src.indexOf('?') === -1 ? '?' : '&') + 'v=' + gen_uuid();
 
-    //src += (src.indexOf('?') === -1 ? '?' : '&') + 'v=' + gen_uuid();
+        if (ext == 'js') { //if filename is a external JavaScript file
+            var resource = document.createElement('script')
+            resource.setAttribute('type', 'text/javascript')
+            resource.setAttribute('src', src)
+        } else if (ext == 'css') { //if filename is an external CSS file
+            var resource = document.createElement('link')
+            resource.setAttribute('rel', 'stylesheet')
+            resource.setAttribute('type', 'text/css')
+            resource.setAttribute('href', src)
+        }
 
-    if (ext == 'js') { //if filename is a external JavaScript file
-        var fileref = document.createElement('script')
-        fileref.setAttribute('type', 'text/javascript')
-        fileref.setAttribute('src', src)
-        if (callback)
-            fileref.onload = callback;
-    } else if (ext == 'css') { //if filename is an external CSS file
-        var fileref = document.createElement('link')
-        fileref.setAttribute('rel', 'stylesheet')
-        fileref.setAttribute('type', 'text/css')
-        fileref.setAttribute('href', src)
-    }
+        // when it loads or the ready state changes
+        resource.onload = resource.onreadystatechange = function() {
+            // make sure it's finished, then fullfill the promise
+            if (!this.readyState || this.readyState == 'complete')
+                fulfill(this);
+        };
 
-    document.getElementsByTagName('head')[0].appendChild(fileref)
+        // begin loading it
+        resource.src = src;
+        // add to head
+        document.getElementsByTagName('head')[0].appendChild(resource);
+    });
+}
+
+function loadScripts(scripts) {
+    return scripts.reduce(function(queue, src) {
+        // once the current item on the queue has loaded, load the next one
+        return queue.then(function() {
+            // individual script
+            return loadScript(src);
+        });
+    }, Promise.resolve() /* this bit is so queue is always a promise */);
 }
 
 function loadIniScript() {
-    loadJsCss(app_url() + 'js/app_index.js' + '?v=' + gen_uid());
+    loadScript(app_url() + 'min/app_index.js' + '?v=' + gen_uid());
 }
 
 function app_connected() {
