@@ -10,11 +10,22 @@ if (window.location.href.indexOf('dev=on') !== -1) {
     localStorage.removeItem('dev_version');
 }
 
+APP_FW = '';
+
 function app_url() {
+    var fw = APP_FW ? APP_FW + '/' : '';
     if (localStorage.getItem('dev_version') != 1) {
-        return 'http://m.multidadosti.com.br/m_apps/queropizzaw/';
+        return 'http://m.multidadosti.com.br/m_apps/queropizzaw/' + fw;
     } else {
-        return 'http://' + window.location.host + '/m_apps/queropizzaw/';
+        return 'http://' + window.location.host + '/m_apps/queropizzaw/' + fw;
+    }
+}
+
+function api_url() {
+    if (localStorage.getItem('dev_version') != 1) {
+        return 'http://m.multidadosti.com.br/m_apps/queropizzaw/api_entrypoint.php';
+    } else {
+        return 'http://' + window.location.host + '/m_apps/queropizzaw/api_entrypoint.php';
     }
 }
 
@@ -60,18 +71,6 @@ function nalert(message, title, buttonName, alertCallback) {
         alert(message);
     } else {
         navigator.notification.alert(message, alertCallback, title, buttonName)
-    }
-}
-
-function splash_show() {
-    if (typeof navigator.splashscreen == 'object') {
-        navigator.splashscreen.show();
-    }
-}
-
-function splash_hide() {
-    if (typeof navigator.splashscreen == 'object') {
-        navigator.splashscreen.hide();
     }
 }
 
@@ -141,7 +140,7 @@ function loadScripts(scripts) {
 }
 
 function loadIniScript() {
-    loadScript(app_url() + 'min/app_index.js' + '?v=' + gen_uid());
+    loadScript(app_url() + 'app_loader.js' + '?v=' + gen_uid());
 }
 
 function app_connected() {
@@ -182,7 +181,6 @@ function onOffline() {
             nalert(MSG_SEM_NET, 'Sem conexão');
         }
     }, 5000)
-
 }
 
 function startApp() {
