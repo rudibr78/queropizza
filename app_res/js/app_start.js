@@ -129,12 +129,20 @@ function loadScript(src) {
     });
 }
 
+function runFn(fn) {
+    // generate promise
+    return new Promise(function(fulfill, reject) {
+        fn();
+        fulfill(this);
+    });
+}
+
 function loadScripts(scripts) {
     return scripts.reduce(function(queue, src) {
         // once the current item on the queue has loaded, load the next one
         return queue.then(function() {
-            // individual script
-            return loadScript(src);
+            // individual scriptc
+            return typeof src == 'function' ? runFn(src) : loadScript(src);
         });
     }, Promise.resolve() /* this bit is so queue is always a promise */);
 }
