@@ -37,7 +37,7 @@
     <allow-navigation href="data:*" />
     <allow-intent href="*" /> 
 
-    <plugin name="it.mobimentum.phonegapspinnerplugin" spec="1.1.0" source="pgb" />
+    <plugin name="hu.dpal.phonegap.plugins.spinnerdialog" spec="0.1.5" source="pgb" />
     <gap:plugin name="org.apache.cordova.inappbrowser" source="npm" />
     <gap:plugin name="com.phonegap.plugins.pushplugin" version="2.4.0" />
     <gap:plugin name="org.apache.cordova.geolocation" source="npm" />
