@@ -21,9 +21,9 @@
     <!-- rudi 14/10/2015 setar versao minima do sdk do android para backward compat (android 2.3+)) -->
     <preference name="android-minSdkVersion" value="10" />
     
-    <name>Quero Pizza</name>
+    <name>Bom Pedido</name>
     
-    <description>Quero Pizza</description>
+    <description>Bom Pedido</description>
     
     <author href="https://multidadosti.com.br" email="rudi.feijo@multidadosti.com.br">Multidados TI</author>
     
