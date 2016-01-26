@@ -94,61 +94,11 @@ function show_div_sem_net() {
     document.body.appendChild(div);
 }
 
-// loads an individual script
-function loadScript(src) {
-    // generate promise
-    return new Promise(function(fulfill, reject) {
-        // create object var spl = src.split('?')[0];
-        var spl = src.split('?')[0];
-        var ext = spl.substring(spl.length - 4) == '.css' ? 'css' : 'js';
-
-        //src += (src.indexOf('?') === -1 ? '?' : '&') + 'v=' + gen_uuid();
-
-        if (ext == 'js') { //if filename is a external JavaScript file
-            var resource = document.createElement('script')
-            resource.setAttribute('type', 'text/javascript')
-            resource.setAttribute('src', src)
-        } else if (ext == 'css') { //if filename is an external CSS file
-            var resource = document.createElement('link')
-            resource.setAttribute('rel', 'stylesheet')
-            resource.setAttribute('type', 'text/css')
-            resource.setAttribute('href', src)
-        }
-
-        // when it loads or the ready state changes
-        resource.onload = resource.onreadystatechange = function() {
-            // make sure it's finished, then fullfill the promise
-            if (!this.readyState || this.readyState == 'complete')
-                fulfill(this);
-        };
-
-        // begin loading it
-        resource.src = src;
-        // add to head
-        document.getElementsByTagName('head')[0].appendChild(resource);
-    });
-}
-
-function runFn(fn) {
-    // generate promise
-    return new Promise(function(fulfill, reject) {
-        fn();
-        fulfill(this);
-    });
-}
-
-function loadScripts(scripts) {
-    return scripts.reduce(function(queue, src) {
-        // once the current item on the queue has loaded, load the next one
-        return queue.then(function() {
-            // individual scriptc
-            return typeof src == 'function' ? runFn(src) : loadScript(src);
-        });
-    }, Promise.resolve() /* this bit is so queue is always a promise */);
-}
-
 function loadIniScript() {
-    loadScript(app_url() + 'app_loader.js' + '?v=' + gen_uid());
+    var resource = document.createElement('script')
+    resource.setAttribute('type', 'text/javascript')
+    resource.setAttribute('src', app_url() + 'app_loader.js' + '?v=' + gen_uid())
+    document.getElementsByTagName('head')[0].appendChild(resource);
 }
 
 function app_connected() {

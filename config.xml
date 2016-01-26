@@ -16,7 +16,6 @@
     <!-- crosswalk alegadamente soh melhora performance em android abaixo de 4.1
         <gap:plugin name="org.crosswalk.engine" version="1.3.0" source="pgb" />
     -->
-     <gap:plugin name="org.crosswalk.engine" version="1.3.0" source="pgb" />
     <plugin name="com.ionic.keyboard" spec="1.0.3" source="pgb" />
     
     <!-- rudi 14/10/2015 setar versao minima do sdk do android para backward compat (android 2.3+)) -->
