@@ -72,12 +72,10 @@
     <preference name="AutoHideSplashScreen" value="true" />
     <preference name="SplashScreenDelay" value="3000" />
     
-    <!--
     <preference name="SplashScreen" value="splash" />
-    <preference value='true' name='FadeSplashScreen'/>
-    <preference value='.25' name='FadeSplashScreenDuration'/>
-    <preference value='true' name='ShowSplashScreenSpinner'/>
-    -->
+    <preference name='FadeSplashScreen' value='true'/>
+    <preference name='FadeSplashScreenDuration' value='.25'/>
+    <preference name='ShowSplashScreenSpinner' value='true'/>
     
     <!--
     <gap:plugin name="de.appplant.cordova.plugin.hidden-statusbar-overlay" version="1.2.0" />
