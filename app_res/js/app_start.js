@@ -1,32 +1,34 @@
+
 APP_ONLINE = true;
 APP_OFFLINE_WARN_TO = false;
 APP_INIT_INTERVAL = false;
 
 MSG_SEM_NET = "Este aplicativo precisa de internet. Por favor verifique sua conexão e tente de novo.";
 
-if (window.location.href.indexOf('dev=on') !== -1) {
-    localStorage.setItem('dev_version', 1);
-} else if (window.location.href.indexOf('dev=off') !== -1) {
-    localStorage.removeItem('dev_version');
-}
-
 APP_FW = '';
 
-function app_url() {
+function res_url() {
+    var baseurl = window.location.href;
+
+    var loc = (baseurl.indexOf('#') !== -1) ? baseurl.split('#')[0] : baseurl;
+    var loc = (loc.indexOf('?') !== -1) ? loc.split('?')[0] : loc;
+
     var fw = APP_FW ? APP_FW + '/' : '';
-    if (localStorage.getItem('dev_version') != 1) {
-        return 'http://m.multidadosti.com.br/m_apps/queropizzaw/' + fw;
-    } else {
-        return 'http://' + window.location.host + '/m_apps/queropizzaw/' + fw;
-    }
+    var url = loc + '../res/' + fw;
+    return url;
+}
+
+function server_url() {
+    var baseurl = window.location.href;
+
+    var loc = (baseurl.indexOf('#') !== -1) ? baseurl.split('#')[0] : baseurl;
+    var loc = (loc.indexOf('?') !== -1) ? loc.split('?')[0] : loc;
+
+    return loc + '../server/';
 }
 
 function api_url() {
-    if (localStorage.getItem('dev_version') != 1) {
-        return 'http://m.multidadosti.com.br/m_apps/queropizzaw/api_entrypoint.php';
-    } else {
-        return 'http://' + window.location.host + '/m_apps/queropizzaw/api_entrypoint.php';
-    }
+    return server_url() + 'api_entrypoint.php';
 }
 
 function splash_show() {
@@ -97,7 +99,7 @@ function show_div_sem_net() {
 function loadIniScript() {
     var resource = document.createElement('script')
     resource.setAttribute('type', 'text/javascript')
-    resource.setAttribute('src', app_url() + 'app_loader.js' + '?v=' + gen_uid())
+    resource.setAttribute('src', res_url() + 'app_loader.js' + '?v=' + gen_uid())
     document.getElementsByTagName('head')[0].appendChild(resource);
 }
 
