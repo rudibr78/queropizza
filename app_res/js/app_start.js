@@ -8,23 +8,34 @@ MSG_SEM_NET = "Este aplicativo precisa de internet. Por favor verifique sua cone
 APP_FW = '';
 
 function res_url() {
-    var baseurl = window.location.href;
-
-    var loc = (baseurl.indexOf('#') !== -1) ? baseurl.split('#')[0] : baseurl;
-    var loc = (loc.indexOf('?') !== -1) ? loc.split('?')[0] : loc;
-
     var fw = APP_FW ? APP_FW + '/' : '';
-    var url = loc + '../res/' + fw;
+
+    if (!window.cordova) {
+        var baseurl = window.location.href;
+
+        var loc = (baseurl.indexOf('#') !== -1) ? baseurl.split('#')[0] : baseurl;
+        var loc = (loc.indexOf('?') !== -1) ? loc.split('?')[0] : loc;
+
+        var url = loc + '../res/' + fw;
+    } else {
+        var url = 'http://m.multidadosti.com.br/pedidos_dev/pedidos/mobile/res/' + fw;
+    }
     return url;
 }
 
 function server_url() {
-    var baseurl = window.location.href;
+    if (!window.cordova) {
+        var baseurl = window.location.href;
 
-    var loc = (baseurl.indexOf('#') !== -1) ? baseurl.split('#')[0] : baseurl;
-    var loc = (loc.indexOf('?') !== -1) ? loc.split('?')[0] : loc;
+        var loc = (baseurl.indexOf('#') !== -1) ? baseurl.split('#')[0] : baseurl;
+        var loc = (loc.indexOf('?') !== -1) ? loc.split('?')[0] : loc;
 
-    return loc + '../server/';
+        var url = loc + '../server/';
+    } else {
+        var url = 'http://m.multidadosti.com.br/pedidos_dev/pedidos/mobile/server/'
+
+    }
+    return url;
 }
 
 function api_url() {
