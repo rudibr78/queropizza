@@ -33,7 +33,6 @@ function server_url() {
         var url = loc + '../server/';
     } else {
         var url = 'http://m.multidadosti.com.br/pedidos_dev/pedidos/mobile/server/'
-
     }
     return url;
 }

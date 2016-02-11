@@ -37,7 +37,7 @@
     <allow-navigation href="data:*" />
     <allow-intent href="*" /> 
 
-    <plugin name="com.eightz.mobile.cordova.plugin.android.referrer" spec="1.0.0" source="pgb" />
+    <!--<plugin name="com.eightz.mobile.cordova.plugin.android.referrer" spec="1.0.0" source="pgb" />-->
     <plugin name="hu.dpal.phonegap.plugins.spinnerdialog" spec="0.1.5" source="pgb" />
     <gap:plugin name="org.apache.cordova.inappbrowser" source="npm" />
     <gap:plugin name="com.phonegap.plugins.pushplugin" version="2.4.0" />
