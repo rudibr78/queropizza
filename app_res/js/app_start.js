@@ -48,7 +48,9 @@ function splash_show() {
 }
 
 function splash_hide() {
+    alert("s hide")
     if (typeof navigator.splashscreen == 'object') {
+        alert("s hide ok ")
         navigator.splashscreen.hide();
     }
 }
