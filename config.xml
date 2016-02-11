@@ -3,8 +3,8 @@
         xmlns:gap = "http://phonegap.com/ns/1.0"
         xmlns:android = "http://schemas.android.com/apk/res/android"
         id        = "com.phonegap.queropizza"
-        version   = "0.0.8"
-        versionCode="008"
+        version   = "0.0.9"
+        versionCode="009"
 >
     
     <!-- rudi 07/10/2015 a versao mais nova (5.2) do cordova crashava no android em qqer tentativa de carregar recursos externos (js, etc)-->
@@ -71,6 +71,8 @@
     </feature>
     <preference name="AutoHideSplashScreen" value="false" />
     <preference name="SplashScreenDelay" value="20000" />
+    <preference name="FadeSplashScreen" value="false"/>
+    <preference name="ShowSplashScreenSpinner" value="false"/>
     
     
     <!--
