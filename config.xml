@@ -73,6 +73,7 @@
     <preference name="ShowSplashScreenSpinner" value="true"/>
     <preference name="FadeSplashScreen" value="true"/>
     <preference name="FadeSplashScreenDuration" value=".25"/>
+    <preference name="SplashScreen" value="splash" />
     
     
     <!--
