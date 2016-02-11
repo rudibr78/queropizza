@@ -221,53 +221,5 @@
     <!-- default splash -->
     <gap:splash src="app_res/images/splashes/splash-port.png" />
     
-    <!-- iPhone and iPod touch -->
-    <gap:splash src="app_res/images/splashes/ios/splash_320x480.png" gap:platform="ios" width="320" height="480" />
-    <gap:splash src="app_res/images/splashes/ios/splash_640x960.png" gap:platform="ios" width="640" height="960" />
-
-    <!-- iPhone 5 / iPod Touch (5th Generation) -->
-    <gap:splash src="app_res/images/splashes/ios/splash_640x1136.png" gap:platform="ios" width="640" height="1136" />
-
-    <!-- iPhone 6 -->
-    <gap:splash src="app_res/images/splashes/ios/splash_750x1334.png" gap:platform="ios" width="750" height="1334" />
-    <gap:splash src="app_res/images/splashes/ios/splash_1242x2208.png" gap:platform="ios" width="1242" height="2208" />
-    <gap:splash src="app_res/images/splashes/ios/splash_2208x1242.png" gap:platform="ios" width="2208" height="1242" />
-
-    <!-- iPad -->
-    <gap:splash src="app_res/images/splashes/ios/splash_768x1024.png" gap:platform="ios" width="768" height="1024" />
-    <gap:splash src="app_res/images/splashes/ios/splash_1024x768.png" gap:platform="ios" width="1024" height="768" />
-
-    <!-- Retina iPad -->
-    <gap:splash src="app_res/images/splashes/ios/splash_1536x2048.png" gap:platform="ios" width="1536" height="2048" />
-    <gap:splash src="app_res/images/splashes/ios/splash_2048x1536.png" gap:platform="ios" width="2048" height="1536" />
-	
-    <!-- Android splashes -->
-    <!-- 200x320 -->
-    <gap:splash src="app_res/images/splashes/android/splash_200x320.png" gap:platform="android" gap:qualifier="port-ldpi" />
-    <!-- 320x480 -->
-    <gap:splash src="app_res/images/splashes/android/splash_320x480.png" gap:platform="android" gap:qualifier="port-mdpi" />
-    <!-- 480x800 -->
-    <gap:splash src="app_res/images/splashes/android/splash_480x800.png" gap:platform="android" gap:qualifier="port-hdpi" />
-    <!-- 720px1280 -->
-    <gap:splash src="app_res/images/splashes/android/splash_720x1280.png" gap:platform="android" gap:qualifier="port-xhdpi" />
-    <!-- 960px1600 -->
-    <gap:splash src="app_res/images/splashes/android/splash_960x1600.png" gap:platform="android" gap:qualifier="port-xxhdpi" />
-    <!-- 1280px1920 -->
-    <gap:splash src="app_res/images/splashes/android/splash_1280x1920.png" gap:platform="android" gap:qualifier="port-xxxhdpi" />
-    <!-- 320x200 -->
-    <gap:splash src="app_res/images/splashes/android/splash_320x200.png" gap:platform="android" gap:qualifier="land-ldpi" />
-    <!-- 480x320 -->
-    <gap:splash src="app_res/images/splashes/android/splash_480x320.png" gap:platform="android" gap:qualifier="land-mdpi" />
-    <!-- 800x480 -->
-    <gap:splash src="app_res/images/splashes/android/splash_800x480.png" gap:platform="android" gap:qualifier="land-hdpi" />
-    <!-- 1280x720 -->
-    <gap:splash src="app_res/images/splashes/android/splash_1280x720.png" gap:platform="android" gap:qualifier="land-xhdpi" />
-    <!-- 1600x960 -->
-    <gap:splash src="app_res/images/splashes/android/splash_1600x960.png" gap:platform="android" gap:qualifier="land-xxhdpi" />
-    <!-- 1920x1280 -->
-    <gap:splash src="app_res/images/splashes/android/splash_1920x1280.png" gap:platform="android" gap:qualifier="land-xxxhdpi" />
-	
-    <!-- Windows Phone splashes -->
-    <gap:splash src="app_res/images/splashes/wp/splash.jpg" gap:platform="winphone" />
 
 </widget>
