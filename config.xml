@@ -69,9 +69,10 @@
         <param name="android-package" value="org.apache.cordova.splashscreen.SplashScreen" />
         <param name="ios-package" value="CDVSplashScreen" />
     </feature>
-    <preference name="AutoHideSplashScreen" value="false" />
+    <preference name="AutoHideSplashScreen" value="true" />
     <preference name="ShowSplashScreenSpinner" value="true"/>
-    <preference name="FadeSplashScreen" value="false"/>
+    <preference name="FadeSplashScreen" value="true"/>
+    <preference name="FadeSplashScreenDuration" value=".25"/>
     
     
     <!--
@@ -79,7 +80,6 @@
     <preference name="SplashScreenDelay" value="3000" />
     <preference name="SplashScreen" value="splash" />
     <preference name="FadeSplashScreen" value="true"/>
-    <preference name="FadeSplashScreenDuration" value=".25"/>
     <preference name="ShowSplashScreenSpinner" value="true"/>
     <gap:plugin name="de.appplant.cordova.plugin.hidden-statusbar-overlay" version="1.2.0" />
     
