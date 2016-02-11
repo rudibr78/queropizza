@@ -37,7 +37,7 @@
     <allow-navigation href="data:*" />
     <allow-intent href="*" /> 
 
-    <!--<plugin name="com.eightz.mobile.cordova.plugin.android.referrer" spec="1.0.0" source="pgb" />-->
+    <plugin name="com.eightz.mobile.cordova.plugin.android.referrer" spec="1.0.0" source="pgb" />
     <plugin name="hu.dpal.phonegap.plugins.spinnerdialog" spec="0.1.5" source="pgb" />
     <gap:plugin name="org.apache.cordova.inappbrowser" source="npm" />
     <gap:plugin name="com.phonegap.plugins.pushplugin" version="2.4.0" />
@@ -69,15 +69,15 @@
         <param name="android-package" value="org.apache.cordova.splashscreen.SplashScreen" />
         <param name="ios-package" value="CDVSplashScreen" />
     </feature>
-    <preference name="AutoHideSplashScreen" value="true" />
-    <preference name="SplashScreenDelay" value="3000" />
     
-    <preference name="SplashScreen" value="splash" />
-    <preference name='FadeSplashScreen' value='true'/>
-    <preference name='FadeSplashScreenDuration' value='.25'/>
-    <preference name='ShowSplashScreenSpinner' value='true'/>
     
     <!--
+    <preference name="AutoHideSplashScreen" value="true" />
+    <preference name="SplashScreenDelay" value="3000" />
+    <preference name="SplashScreen" value="splash" />
+    <preference name="FadeSplashScreen" value="true"/>
+    <preference name="FadeSplashScreenDuration" value=".25"/>
+    <preference name="ShowSplashScreenSpinner" value="true"/>
     <gap:plugin name="de.appplant.cordova.plugin.hidden-statusbar-overlay" version="1.2.0" />
     
     <gap:plugin name="org.apache.cordova.network-information" version="0.2.12" />
